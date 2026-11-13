@@ -213,7 +213,9 @@
       "status": "Pending review",
       "license": "EIA published table; upstream commercial data not redistributed.",
       "effect": "Quarterly oil flow, million barrels/day",
-      "correction_of": null
+      "correction_of": null,
+      "hash": "812535df648559d204165128b3f5f8835c8aab846107feb082670b80d998bd85",
+      "retrieved_at": "2026-11-13T19:46:14.367345+00:00"
     },
     {
       "id": "E002",
@@ -238,7 +240,9 @@
       "status": "Pending review",
       "license": "Short excerpt with attribution; original document linked.",
       "effect": "Verification access unavailable at reported facilities except Bushehr",
-      "correction_of": null
+      "correction_of": null,
+      "hash": "4a1278aeb1adda810dd2fdc89ab015f2be03501e376c69136a9b3930453498dd",
+      "retrieved_at": "2026-11-13T19:46:14.160157+00:00"
     },
     {
       "id": "E003",
@@ -264,7 +268,8 @@
       "status": "Pending review",
       "license": "Short excerpt with attribution; original linked.",
       "effect": "Qualitative policy / economic evidence",
-      "correction_of": null
+      "correction_of": null,
+      "retrieval_error": "HTTP Error 403: Forbidden"
     },
     {
       "id": "E004",
@@ -289,7 +294,9 @@
       "status": "Pending review",
       "license": "Short excerpt with attribution; original linked.",
       "effect": "Qualitative policy / economic evidence",
-      "correction_of": null
+      "correction_of": null,
+      "hash": "fc8dbad8d1e62c02002135385f94614ec05acbaba9f2eb2dc219504c1a263c3f",
+      "retrieved_at": "2026-11-13T19:46:14.687977+00:00"
     },
     {
       "id": "E005",
@@ -314,7 +321,8 @@
       "status": "Pending review",
       "license": "Short excerpt with attribution; original linked.",
       "effect": "Qualitative policy / economic evidence",
-      "correction_of": null
+      "correction_of": null,
+      "retrieval_error": "HTTP Error 403: Forbidden"
     }
   ],
   "series": {
