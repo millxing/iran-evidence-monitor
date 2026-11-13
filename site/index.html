@@ -1,1 +1,227 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173b35"><title>Iran Evidence Monitor — Claims, tested.</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="#overview"><span class="mark">I/E</span> IRAN EVIDENCE MONITOR</a><span class="edition">INDEPENDENT RESEARCH OBSERVATORY · 01</span><a href="https://github.com/millxing/iran-evidence-monitor">Source & data ↗</a></header><nav aria-label="Main"><a href="#overview">Overview</a><a href="#indicators">Indicators</a><a href="#ledger">Evidence ledger</a><a href="#scenarios">Scenarios</a><a href="#history">Review history</a><a href="#method">Methodology</a></nav><main id="main"><section class="hero" id="overview"><div><p class="eyebrow">ROBERT PAPE / IRAN / SIX TESTABLE HYPOTHESES</p><h1>Claims,<br><em>tested.</em></h1><p class="intro">Track the distance between military damage, political compliance, and lasting power.</p></div><aside class="hero-note"><span class="eyebrow">THE CENTRAL QUESTION</span><p>Does the ability to disrupt become the ability to influence?</p><div class="chain"><span>Disruption</span><b>→</b><span>Concessions</span><b>→</b><span>Durable power</span></div><small>Evidence for one step does not establish the next.</small></aside></section><div class="statusline"><span><i></i> BASELINE · 12 NOV 2026</span><span id="collectionStatus">Loading source status…</span><a href="data/monitor.json" download>Download research data ↓</a></div><div class="notice"><b>A provisional baseline, not a verdict.</b> Numeric levels encode ordinal evidence judgments, not probabilities. Initial tests and assessments await human review. Historical observations do not describe live conditions.</div><section class="section"><div class="section-head"><div><p class="eyebrow">01 / CLAIM REGISTER</p><h2>Six claims. Separate tests.</h2></div><label>Show claims <select id="claimFilter"><option value="all">All domains</option><option value="evidence">With evidence</option><option value="missing">No evidence yet</option></select></label></div><div id="claims" class="claims" aria-live="polite"></div></section><section id="indicators" class="section indicator"><div class="section-head"><div><p class="eyebrow">02 / OBSERVABLE INDICATORS</p><h2>The pressure on passage.</h2></div><label>Time window <select id="window"><option value="all">All observations</option><option value="2026">2026</option><option value="2025">2025</option></select></label></div><div class="chart-layout"><div><div class="chart-title">Oil through the Strait of Hormuz <span>million barrels / day</span></div><div id="chart"></div><p class="caption">EIA estimates · Quarterly data · Dashed line: Q1 2025 reference, not a causal counterfactual. No uncertainty interval published in this table.</p></div><aside><p class="eyebrow">READ WITH CARE</p><h3>Flow is a proxy.<br>Cause is a separate test.</h3><p>Changes can reflect disruption, demand, supply, or rerouting. This series alone cannot establish Iranian intent, retained capacity, or concessions.</p><a id="chartSource" href="#ledger">Inspect source and coverage ↗</a><details><summary>Exact observations</summary><div id="raw"></div></details></aside></div></section><section id="ledger" class="section"><div class="section-head"><div><p class="eyebrow">03 / EVIDENCE LEDGER</p><h2>Every judgment leaves a trail.</h2></div><button id="export">Export ledger CSV ↓</button></div><div class="filters"><label>Search <input id="search" type="search" placeholder="Source, claim, or observation"></label><label>Order <select id="sort"><option value="new">Newest observation</option><option value="old">Oldest observation</option><option value="claim">Claim ID</option></select></label></div><div id="evidence" aria-live="polite"></div></section><section id="scenarios" class="section scenario"><p class="eyebrow">04 / SENSITIVITY CHECK</p><h2>What survives a stricter test?</h2><p>Explore evidence coverage under alternative inclusion rules. These controls do not change published confidence levels.</p><div class="filters"><label><input type="checkbox" id="excludeProxy"> Exclude proxy measurements</label><label><input type="checkbox" id="recent"> Only observations within 180 days of baseline</label></div><div id="scenarioResult" class="scenario-result" aria-live="polite"></div><p>Competing explanations: economic demand versus interdiction; diplomatic bargaining versus coercion; regional hedging versus accommodation. A 30-day disruption test and a 180-day durability test answer different questions. No causal model or calibrated weights have been fitted.</p></section><section id="history" class="section"><div class="section-head"><div><p class="eyebrow">05 / ASSESSMENT HISTORY</p><h2>Confidence, with a memory.</h2></div><a href="https://github.com/millxing/iran-evidence-monitor/issues/new?template=review.yml">Submit an evidence review ↗</a></div><div id="historyChart"></div><div id="historyRows"></div></section><section class="section"><p class="eyebrow">06 / COVERAGE & MISSINGNESS</p><h2>What we cannot yet see.</h2><div id="gaps" class="gaps"></div><details><summary>Scheduled collection status & review queue</summary><div id="queue"></div></details></section><section id="method" class="section method"><p class="eyebrow">07 / METHODOLOGY</p><h2>Measure. Challenge. Revise.</h2><div class="method-grid"><div><h3>A scale, not a probability</h3><p>−5 very strong challenge; −4 strong challenge; −3 moderate challenge; −2 limited challenge; −1 slight challenge; 0 inconclusive; +1 slight support; +2 limited support; +3 moderate support; +4 strong support; +5 very strong support. Δ is the current level minus the provisional November 12 baseline. Levels 1–2 indicate suggestive or limited evidence. Level 3 requires direct evidence and independent corroboration; 4 requires repeated corroboration and the operational test; 5 requires sustained results across the registered horizon. Equal numeric steps do not imply equal amounts of evidence. Missing data never count as negative evidence.</p></div><div><h3>Attribution has limits</h3><p>These six hypotheses come from the supplied analytical report, pages 6–9. They include interpretive extensions of Pape’s work. They are not verified direct quotations. No composite score or assessment of Pape as a person is produced.</p></div><div><h3>A controlled update process</h3><p>Scheduled checks detect changes to registered source pages. They do not decide causation. A reviewer must approve test definitions, then record evidence IDs, rationale, uncertainty and a signed assessment. Related observations share a cluster to prevent double counting.</p></div><div><h3>A historical cutoff</h3><p>The baseline cutoff is November 12, 2026, 23:59:59 UTC. Sources must have been released by that date. Retrieval after the cutoff cannot prove the content was unchanged. Baseline levels are provisional analyst judgments until archived versions and the source set are reviewed. Future observations must not enter the baseline.</p></div></div><p class="caption">The initial release implements the report’s evidence-monitoring MVP. Daily AIS, insurance, treaty, economic and military feeds are not connected. No backtested probability model is claimed.</p></section></main><footer><span>IRAN / EVIDENCE MONITOR</span><span>Built for scrutiny, not certainty.</span><a href="https://github.com/millxing/iran-evidence-monitor">Method, data & revision history ↗</a></footer><dialog id="detail"><button id="close" aria-label="Close claim details">Close ×</button><div id="detailContent"></div></dialog><script src="app.js" type="module"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Iran Evidence Monitor</title>
+  <meta name="description" content="Six hypotheses about Iran, scored on an ordinal evidence scale from −5 to +5 against a 12 November 2026 baseline.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div>
+      <h1>Iran Evidence Monitor</h1>
+      <p class="lede">Six hypotheses drawn from an assessment of Robert Pape’s work on Iran. Each has its own evidence level, from −5 (very strong challenge) to +5 (very strong support).</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Baseline</dt><dd>12 Nov 2026</dd></div>
+      <div><dt>Levels recorded</dt><dd id="lastAssessment">—</dd></div>
+      <div><dt>Sources checked</dt><dd><a href="#coverage" id="collectionStatus">—</a></dd></div>
+    </dl>
+  </div>
+</header>
+<div class="navbar">
+  <nav aria-label="Sections" class="wrap">
+    <a href="#claims">Claims</a>
+    <a href="#hormuz">Hormuz</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#sensitivity">Independence</a>
+    <a href="#history">History</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#method">Method</a>
+  </nav>
+</div>
+
+<main id="main" class="wrap">
+  <p class="notice" role="note"><strong>Provisional.</strong> No level has human review yet. Levels are ordinal judgments, not probabilities. Missing evidence does not count against a claim.</p>
+
+  <section id="claims" aria-labelledby="claims-h">
+    <div class="section-head">
+      <h2 id="claims-h">Claims</h2>
+      <label class="control">Show
+        <select id="claimFilter">
+          <option value="all">All claims</option>
+          <option value="evidence">With evidence</option>
+          <option value="missing">Without evidence</option>
+        </select>
+      </label>
+    </div>
+    <p id="claimSummary" class="sub" role="status"></p>
+    <div id="claimTable"><p class="empty" id="loadMsg">Loading data…</p></div>
+    <p id="claimKey" class="caption"></p>
+  </section>
+
+  <section id="hormuz" aria-labelledby="hormuz-h">
+    <h2 id="hormuz-h">Strait of Hormuz</h2>
+    <p class="sub">Context for claim H2 (maritime denial). The ship counts are not scored. The oil-flow series is evidence record <a href="#ev-E001" data-ev="E001">E001</a>.</p>
+
+    <div class="subsection">
+      <div class="section-head">
+        <h3 id="transits-h">Ships per day</h3>
+        <label class="control">Period
+          <select id="transitWindow">
+            <option value="90">Last 90 days</option>
+            <option value="2025" selected>Since Jan 2025</option>
+            <option value="all">Since Jan 2019</option>
+          </select>
+        </label>
+      </div>
+      <p id="transitReadout" class="readout"></p>
+      <ul class="legend" aria-hidden="true">
+        <li><i class="k k-daily"></i>Daily</li>
+        <li class="narrow-only"><i class="k k-avg"></i>All ships, 7-day avg</li>
+        <li class="narrow-only"><i class="k k-tank"></i>Tankers, 7-day avg</li>
+        <li class="narrow-only"><i class="k k-ref"></i>2025 avg</li>
+      </ul>
+      <p id="transitLive" class="visually-hidden" aria-live="polite"></p>
+      <div id="transitChart" class="chart"></div>
+      <p class="caption chart-hint" id="transitHint">Hover or tap the chart to read daily values; with the keyboard, focus it and use the arrow keys.</p>
+      <p id="transitSource" class="caption"></p>
+      <details>
+        <summary>Monthly averages for this period</summary>
+        <div id="transitRaw"></div>
+      </details>
+    </div>
+
+    <div class="subsection">
+      <div class="section-head">
+        <h3 id="oil-h">Oil flow, million barrels per day</h3>
+        <label class="control">Period
+          <select id="window">
+            <option value="all">All quarters</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+          </select>
+        </label>
+      </div>
+      <div id="chart" class="chart"></div>
+      <p class="caption">Source: U.S. Energy Information Administration, quarterly estimates; series ends Q2 2026 (30 Jun). No uncertainty interval is published. Flow is a proxy: a drop can come from disruption, lower demand, supply cuts or rerouting.</p>
+      <details>
+        <summary>Data table</summary>
+        <div id="raw"></div>
+      </details>
+    </div>
+  </section>
+
+  <section id="evidence" aria-labelledby="evidence-h">
+    <div class="section-head">
+      <h2 id="evidence-h">Evidence</h2>
+      <button id="export" type="button">Download CSV</button>
+    </div>
+    <div class="filters">
+      <label class="control grow">Search
+        <input id="search" type="search" placeholder="Title, source or text">
+      </label>
+      <label class="control">Claim
+        <select id="claimSelect"><option value="">All</option></select>
+      </label>
+      <label class="control">Sort
+        <select id="sort">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+          <option value="claim">Claim ID</option>
+        </select>
+      </label>
+    </div>
+    <p class="count-line"><span id="evidenceStatus" role="status"></span> <button type="button" class="link-button" id="clearEvidence" hidden>Clear filters</button></p>
+    <div id="evidenceList"></div>
+  </section>
+
+  <section id="sensitivity" aria-labelledby="sens-h" class="ref">
+    <h2 id="sens-h">Source independence</h2>
+    <p class="sub">Independent sources per claim. Records from the same underlying source count as one. Apply a filter to see how many remain. Published levels do not change.</p>
+    <div class="filters">
+      <label class="check"><input type="checkbox" id="excludeProxy"> Exclude proxy measurements</label>
+      <label class="check"><input type="checkbox" id="recent"> Only observations within 180 days of baseline</label>
+    </div>
+    <div id="scenarioResult"></div>
+    <p id="scenarioNote" class="caption" role="status"></p>
+  </section>
+
+  <section id="history" aria-labelledby="hist-h" class="ref">
+    <div class="section-head">
+      <h2 id="hist-h">History</h2>
+      <a class="button" href="https://github.com/millxing/iran-evidence-monitor/issues/new?template=review.yml">Suggest a review on GitHub<span aria-hidden="true"> ↗</span></a>
+    </div>
+    <p id="historyNote" class="sub"></p>
+    <div id="historyRows"></div>
+  </section>
+
+  <section id="coverage" aria-labelledby="cov-h" class="ref">
+    <h2 id="cov-h">Coverage</h2>
+    <p class="sub">Data gaps and limits.</p>
+    <div id="gaps"></div>
+    <h3>Source checks</h3>
+    <div id="queue"></div>
+  </section>
+
+  <section id="method" aria-labelledby="method-h" class="ref">
+    <h2 id="method-h">Method</h2>
+    <div class="method">
+      <div>
+        <h3>Scale</h3>
+        <table class="scale-table">
+          <thead><tr><th scope="col">Magnitude</th><th scope="col">Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>Inconclusive</td></tr>
+            <tr><td>1</td><td>Slight: suggestive evidence only</td></tr>
+            <tr><td>2</td><td>Limited: relevant evidence, without independent corroboration</td></tr>
+            <tr><td>3</td><td>Moderate: direct evidence plus independent corroboration</td></tr>
+            <tr><td>4</td><td>Strong: repeated corroboration, and the claim’s test is met</td></tr>
+            <tr><td>5</td><td>Very strong: results hold for the full assessment period</td></tr>
+          </tbody>
+        </table>
+        <p>A positive value supports a claim. A negative value challenges it. Change is the current level minus the baseline. The steps are ordinal: equal steps do not mean equal amounts of evidence.</p>
+        <p>Each evidence record is marked “potential support”, “potential challenge”, or “uncertainty only” (it changes how sure we can be, not the direction). A record linked to two claims can have a different direction for each.</p>
+      </div>
+      <div>
+        <h3>Source of the claims</h3>
+        <p><cite>Robert Pape, Iran, and the Middle East: a critical assessment of coercion, escalation, maritime leverage, nuclear risk, and regional order</cite>. Unpublished analytical report, 13 November 2026, pages 6–9; not available online. The claims include interpretations of Pape’s work. They are not direct quotations. There is no combined score and no score for Pape.</p>
+        <h3>Who set the levels</h3>
+        <p>An AI assistant (Codex) drafted the baseline levels and test definitions on 13 November 2026. No person has reviewed them yet. A reviewer must approve each test, then record the level, evidence, rationale and uncertainty.</p>
+        <h3>Cutoff</h3>
+        <p>Baseline cutoff: 12 November 2026, 23:59:59 UTC. Sources were retrieved on 13 November, so their content on the cutoff date is not confirmed. The tests were written after the events they cover.</p>
+        <h3>Updates and limits</h3>
+        <p>“Not machine-verified” marks a record whose source could not be fetched automatically; its content was checked by hand and has no file hash. A daily job detects changes to registered source pages and updates the ship counts. It does not score evidence. Insurance, treaty, economic and military data are not connected. There is no forecast model.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap"><div class="foot">
+  <a href="https://github.com/millxing/iran-evidence-monitor">Repository</a>
+  <a href="data/monitor.json" download>Claims and evidence (JSON)</a>
+  <a href="data/transits.json" download>Ship counts (JSON)</a>
+  <a href="data/collection.json" download>Source checks (JSON)</a>
+</div></footer>
+
+<dialog id="detail" aria-labelledby="detailTitle">
+  <div class="dialog-head">
+    <span id="detailMeta" class="meta"></span>
+    <button id="close" type="button">Close</button>
+  </div>
+  <div id="detailContent"></div>
+</dialog>
+
+<script>
+  // Shown only when app.js cannot run, so the page is never silently empty.
+  (function () {
+    var msg = location.protocol === 'file:'
+      ? 'This page must be opened through a web server, not as a local file. Run “python3 -m http.server” in the site folder and open http://localhost:8000/.'
+      : 'The data did not load. Reload the page.';
+    setTimeout(function () {
+      if (!document.documentElement.hasAttribute('data-ready')) {
+        var el = document.getElementById('loadMsg');
+        if (el) el.textContent = msg;
+      }
+    }, location.protocol === 'file:' ? 0 : 6000);
+  })();
+</script>
+<script src="app.js" type="module"></script>
+</body>
+</html>

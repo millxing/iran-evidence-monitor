@@ -15,7 +15,8 @@
       "horizon": "2027-11-13",
       "status": "draft",
       "owner": "millxing",
-      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape.",
+      "plain": "Strikes alone seldom force Iran to meet its attackers' maximum political demands."
     },
     {
       "id": "H2",
@@ -79,7 +80,8 @@
       "horizon": "2028-11-13",
       "status": "draft",
       "owner": "millxing",
-      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape.",
+      "plain": "Attacks give Iran a stronger long-term reason to rebuild its nuclear program."
     },
     {
       "id": "H6",
@@ -269,7 +271,11 @@
       "license": "Short excerpt with attribution; original linked.",
       "effect": "Qualitative policy / economic evidence",
       "correction_of": null,
-      "retrieval_error": "HTTP Error 403: Forbidden"
+      "retrieval_error": "HTTP Error 403: Forbidden",
+      "directions": {
+        "H3": "Uncertainty only",
+        "H6": "Potential challenge"
+      }
     },
     {
       "id": "E004",
@@ -370,33 +376,45 @@
       "actor": "Codex",
       "action": "Created draft claim tests and provisional November 12 baseline assessments. Five source records; no human approval.",
       "approved": false
+    },
+    {
+      "date": "2026-11-13",
+      "actor": "Claude (at owner request)",
+      "action": "Added per-claim directions to E003: H3 uncertainty only, H6 potential challenge. The record-level direction is kept for compatibility. No level changed.",
+      "approved": false
+    },
+    {
+      "date": "2026-11-13",
+      "actor": "Claude (at owner request)",
+      "action": "Added plain-language summaries for H1 and H5 (formal statements unchanged) and reworded coverage-gap descriptions. No level changed.",
+      "approved": false
     }
   ],
   "gaps": [
     {
       "name": "AIS transit coverage",
-      "state": "Not connected",
-      "detail": "No daily AIS feed or coverage denominator. Quarterly EIA oil flow is a proxy, not a vessel count."
+      "state": "Display only",
+      "detail": "Daily IMF PortWatch ship counts are shown but not scored. The total number of ships is not known, and AIS misses ships with transponders switched off."
     },
     {
       "name": "War-risk insurance",
       "state": "Not connected",
-      "detail": "No licensed premium series. Prices are not imputed."
+      "detail": "No licensed insurance-price data. Missing prices are not estimated."
     },
     {
       "name": "Nuclear verification",
       "state": "Historical only",
-      "detail": "September 2025 report available. Current access and material accounting need review."
+      "detail": "A September 2025 IAEA report is available. Current inspector access and nuclear material records need review."
     },
     {
       "name": "Diplomatic concessions",
       "state": "Review required",
-      "detail": "No attributed, durable concession entered. Missing evidence is not evidence of absence."
+      "detail": "No lasting concession credited to Iranian pressure has been entered. No record does not mean no concession."
     },
     {
       "name": "Regional / net power",
       "state": "Not connected",
-      "detail": "Treaty, trade, fiscal and military regeneration series require curation."
+      "detail": "Treaty, trade, budget and military-rebuilding data still need to be collected and checked."
     }
   ]
 }
