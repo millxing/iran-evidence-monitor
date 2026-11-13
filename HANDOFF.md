@@ -121,7 +121,7 @@ Suggested by evaluators, not done:
 8. IMF WEO inflation projections for 2026 would be more current than World Bank annual data, but the IMF DataMapper API refused automated requests in testing.
 9. Commit a reusable browser test suite (Playwright) to replace the scratchpad scripts.
 
-Operations and research limits (unchanged): collection detects page-byte changes only; only five curated evidence records; insurance, treaty, economic and military feeds are not connected; no forecast model. Review application requires repository write access and `scripts/review.py` (do not run with `python -O`).
+Operations and research limits (unchanged): collection detects page-byte changes only; only eight curated evidence records (E006–E008 are 2026 IAEA reports added Nov 13; owner-supplied PDFs kept locally in `IAEA/`, ignored by Git, hashes match iaea.org); insurance, treaty and military feeds are not connected; no forecast model. Review application requires repository write access and `scripts/review.py` (do not run with `python -O`).
 
 ## Next steps
 

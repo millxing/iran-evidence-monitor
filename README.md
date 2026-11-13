@@ -37,4 +37,4 @@ The original PDF is not published. Restricted full-text documents and commercial
 
 ## Known limitations
 
-Five curated source records, not comprehensive November 12 intelligence. Daily AIS, insurance, military outcomes, treaties and economic feeds are not connected. No daily time series, calibrated probabilities, event-study estimator, reference-class backtest or causal identification is claimed. The scenario panel checks source exclusion and observation age, not posterior sensitivity. No current nuclear status is inferred from historical access gaps. All initial definitions and ratings need human review.
+Eight curated source records (E001–E008), not comprehensive November 12 intelligence. Insurance, military outcomes and treaties are not connected; AIS, oil price and economic series are display-only. No daily time series, calibrated probabilities, event-study estimator, reference-class backtest or causal identification is claimed. The scenario panel checks source exclusion and observation age, not posterior sensitivity. No current nuclear status is inferred from historical access gaps. All initial definitions and ratings need human review.

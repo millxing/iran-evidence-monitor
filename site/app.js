@@ -640,7 +640,8 @@ function ledger() {
         'Known gaps': e.missingness,
         'Review state': e.status,
         License: e.license,
-        Retrieval: e.retrieval_error ? `Automated retrieval failed on ${fmtDate(e.collected)} (${e.retrieval_error}). Content checked by web research only; no file hash.` : `SHA-256 ${e.hash || 'not captured'}`,
+        Retrieval: e.retrieval_error ? `Automated retrieval failed on ${fmtDate(e.collected)} (${e.retrieval_error}). Content checked by web research only; no file hash.` : `SHA-256 ${e.hash || 'not captured'}${e.retrieval_note ? `. ${e.retrieval_note}` : ''}`,
+        ...(e.corrigendum ? { Corrigendum: `${e.corrigendum.document}. SHA-256 ${e.corrigendum.hash}` } : {}),
         'Correction of': e.correction_of || 'None',
       })}</details>
     </article>`).join('') || '<p class="empty">No records match. <button type="button" class="link-button" id="clearFilters">Clear filters</button></p>';

@@ -329,6 +329,95 @@
       "effect": "Qualitative policy / economic evidence",
       "correction_of": null,
       "retrieval_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "publisher": "IAEA",
+      "collected": "2026-11-13",
+      "type": "Direct institutional report",
+      "cluster": "iran-inspections-2025",
+      "reliability": "Primary institutional report (IAEA Director General to the Board); official derestricted copy",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original document linked.",
+      "correction_of": null,
+      "retrieved_at": "2026-11-13T23:30:00+00:00",
+      "retrieval_note": "File supplied by the owner; SHA-256 matches the copy downloaded from iaea.org on 13 Nov 2026.",
+      "id": "E006",
+      "claims": [
+        "H5"
+      ],
+      "title": "Iran ends the Cairo inspection agreement and makes cooperation conditional on the end of threats",
+      "url": "https://www.iaea.org/sites/default/files/gov2026-8.pdf",
+      "document": "GOV/2026/8 (27 Feb 2026), paragraphs 13, 16, 19\u201320, 23",
+      "published": "2026-03-04",
+      "observed": "2026-02-27",
+      "direction": "Potential support",
+      "excerpt": "Iran stated that \u201cthe conditions resulting from acts of aggression and the continuation of threats have created a situation in which the normal implementation of safeguards is legally untenable and materially impracticable.\u201d",
+      "rationale": "Documented policy change on inspections that Iran itself links to the attacks: the Cairo agreement was declared terminated on 20 Nov 2025, and cooperation was made conditional on the end of threats. This bears only on the policy-hardening part of the H5 test. Satellite imagery showed activity at Isfahan, Natanz and Fordow, but the IAEA could not confirm its nature, so no rebuilding is verified.",
+      "confounders": "Bargaining leverage before negotiations; physical safety at damaged sites; Iranian concern about information security of inspections.",
+      "missingness": "No access to any affected facility; stockpile size and location unknown since June 2025.",
+      "effect": "Access to declared facilities and Iranian policy statements on safeguards",
+      "hash": "3ea371d7b86e6de2365bbc342ab4aa09a3bdf1cfcb4b15fcc57cd22e97a4c797"
+    },
+    {
+      "publisher": "IAEA",
+      "collected": "2026-11-13",
+      "type": "Direct institutional report",
+      "cluster": "iran-inspections-2025",
+      "reliability": "Primary institutional report (IAEA Director General to the Board); official derestricted copy",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original document linked.",
+      "correction_of": null,
+      "retrieved_at": "2026-11-13T23:30:00+00:00",
+      "retrieval_note": "File supplied by the owner; SHA-256 matches the copy downloaded from iaea.org on 13 Nov 2026.",
+      "id": "E007",
+      "claims": [
+        "H5"
+      ],
+      "title": "IAEA verification stops again after the February 2026 attacks; access only at Bushehr",
+      "url": "https://www.iaea.org/sites/default/files/gov2026-33.pdf",
+      "document": "GOV/2026/33 (4 Jun 2026) and Corr.1, paragraphs 16\u201321, 26, 39\u201340",
+      "published": "2026-06-10",
+      "observed": "2026-06-04",
+      "direction": "Uncertainty only",
+      "excerpt": "\u201cOn 28 February 2026, the United States of America and Israel launched further military attacks on Iran, including on the sites of some nuclear facilities. Consequently, the Agency stopped conducting verification activities in Iran.\u201d",
+      "rationale": "Second loss of access. The only verification in the period was at Bushehr (1\u20133 June 2026), with Iran\u2019s cooperation. Satellite imagery showed damage at Natanz and severe damage to the Khondab heavy water plant. Damage from attacks is not a verified capacity reduction, and the absence of access does not show rebuilding.",
+      "confounders": "Active hostilities and safety limits on inspections.",
+      "missingness": "No information on enrichment, centrifuge inventory or stockpile; no access to 21 of 22 declared facilities.",
+      "effect": "Verification access and reported damage to nuclear sites",
+      "hash": "d07baba36bf86f8527bb19d39498f5053c5ac19ee0522bde123cfa57f682a24a",
+      "corrigendum": {
+        "document": "GOV/2026/33/Corr.1 (5 Jun 2026): corrects the Bushehr attack dates in paragraph 17 to 17, 24 and 27 March and 4 April 2026",
+        "url": "https://www.iaea.org/sites/default/files/gov2026-33c1.pdf",
+        "hash": "fb43e6e8fd454435510dbe24d9d4f05bf08778a12d78b96d2b81e59612e6d19f"
+      }
+    },
+    {
+      "publisher": "IAEA",
+      "collected": "2026-11-13",
+      "type": "Direct institutional report",
+      "cluster": "iran-inspections-2025",
+      "reliability": "Primary institutional report (IAEA Director General to the Board); official derestricted copy",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original document linked.",
+      "correction_of": null,
+      "retrieved_at": "2026-11-13T23:30:00+00:00",
+      "retrieval_note": "File supplied by the owner; SHA-256 matches the copy downloaded from iaea.org on 13 Nov 2026.",
+      "id": "E008",
+      "claims": [
+        "H5"
+      ],
+      "title": "Short-lived US\u2013Iran memorandum on down-blending; IAEA has no access for more than a year",
+      "url": "https://www.iaea.org/sites/default/files/gov2026-50.pdf",
+      "document": "GOV/2026/50 (1 Sep 2026), paragraphs 17, 19, 21, 23, 43\u201346",
+      "published": "2026-09-09",
+      "observed": "2026-09-01",
+      "direction": "Potential challenge",
+      "excerpt": "Under the 17 June 2026 memorandum both parties agreed to \u201cresolve the disposition of stockpiled enriched material\u2026 with the minimum methodology to be down-blended on site under the supervision of the IAEA\u201d.",
+      "rationale": "Iran\u2019s signed agreement to down-blend its stockpile under IAEA supervision is evidence against policy hardening. The challenge is weak: the IAEA quotes the memorandum from press sources, no down-blending took place, and both sides declared the memorandum over in July 2026 (it expired on 17 Aug 2026). The report also states that continuity of knowledge over the LEU and 60% HEU has been lost for more than a year, which is uncertainty, not rebuilding.",
+      "confounders": "Ceasefire bargaining; the memorandum may reflect pressure, not a change in long-run incentives.",
+      "missingness": "Memorandum text is from press reports, not an official release. No in-field verification at any declared facility in the period. Iran disputes the report (INFCIRC/1416, not recorded).",
+      "effect": "Iranian commitments on the enriched-uranium stockpile; verification access",
+      "hash": "325127e81d4fb61053c6fbf1126fe9a3a507cb5e4bc57f7dfeb94afa4c9c3a48"
     }
   ],
   "series": {
@@ -414,6 +503,12 @@
       "actor": "Claude (at owner request)",
       "action": "Added the EIA crude, products and LNG breakdown to the Hormuz series (from E001, Table 4), an AIS reliability note, and a display-only gap entry for economic context. No level, evidence direction or statement changed.",
       "approved": false
+    },
+    {
+      "date": "2026-11-13",
+      "actor": "Claude (at owner request)",
+      "action": "Added evidence records E006\u2013E008 from IAEA reports GOV/2026/8, GOV/2026/33 (with Corr.1) and GOV/2026/50, supplied by the owner and matched by hash to iaea.org. Directions are proposals pending review. No level changed.",
+      "approved": false
     }
   ],
   "gaps": [
@@ -429,8 +524,8 @@
     },
     {
       "name": "Nuclear verification",
-      "state": "Historical only",
-      "detail": "A September 2025 IAEA report is available. Current inspector access and nuclear material records need review."
+      "state": "Current to Sep 2026",
+      "detail": "IAEA reports to 1 September 2026 are recorded (E006\u2013E008). The IAEA has had no access to the stockpile or the enrichment sites since June 2025; the size and location of the enriched uranium are unknown. Later reports are not included."
     },
     {
       "name": "Diplomatic concessions",

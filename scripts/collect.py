@@ -1,7 +1,7 @@
 """Fetch registered sources; record hashes, changed-source candidates and errors. Never score claims."""
 import datetime, hashlib, json, pathlib, urllib.request
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-SOURCES=[('EIA energy security','https://www.eia.gov/outlooks/steo/report/energysecurity/article.php'),('IAEA Iran updates','https://www.iaea.org/newscenter/focus/iran'),('UKMTO notices','https://www.ukmto.org/')]
+SOURCES=[('EIA energy security','https://www.eia.gov/outlooks/steo/report/energysecurity/article.php'),('IAEA Iran updates','https://www.iaea.org/newscenter/focus/iran'),('IAEA Board reports on Iran','https://www.iaea.org/newscenter/focus/iran/iaea-and-iran-iaea-board-reports'),('UKMTO notices','https://www.ukmto.org/')]
 def collect():
  p=ROOT/'site/data/collection.json';old=json.loads(p.read_text());now=datetime.datetime.now(datetime.timezone.utc).isoformat();out={'checked_at':now,'sources':[],'candidates':old['candidates']};previous={s['url']:s for s in old['sources']}
  for name,url in SOURCES:
