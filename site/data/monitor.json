@@ -1,0 +1,394 @@
+{
+  "created": "2026-11-13",
+  "claims": [
+    {
+      "id": "H1",
+      "title": "Military coercion",
+      "statement": "Strikes alone rarely achieve maximal Iranian political compliance.",
+      "geography": "Iran; explicitly declared maximal objectives of each strike campaign",
+      "effect": "Compliance sustained for 180 days after a campaign",
+      "falsifier": "A documented maximal demand is fully met for 180 days without occupation.",
+      "support": "Survival and resistance after major damage",
+      "alternative": "Negotiations, sanctions, limited military objectives; do not treat delay as failure.",
+      "version": 1,
+      "baseline": "2026-11-12",
+      "horizon": "2027-11-13",
+      "status": "draft",
+      "owner": "millxing",
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+    },
+    {
+      "id": "H2",
+      "title": "Maritime denial",
+      "statement": "Iran retains consequential maritime-denial capacity.",
+      "geography": "Strait of Hormuz; commercial oil passage",
+      "effect": "At least 10% lower volume than the prior four-quarter mean for 30 days, with corroborated Iranian interference",
+      "falsifier": "90 days of normal passage under a documented credible threat and active countermeasures.",
+      "support": "Verified persistent disruption despite countermeasures",
+      "alternative": "Demand, voluntary rerouting, production cuts and tracking coverage can change flows.",
+      "version": 1,
+      "baseline": "2026-11-12",
+      "horizon": "2027-11-13",
+      "status": "draft",
+      "owner": "millxing",
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+    },
+    {
+      "id": "H3",
+      "title": "Political concessions",
+      "statement": "Maritime coercion yields durable political concessions.",
+      "geography": "Governments negotiating with Iran",
+      "effect": "A substantive policy change sustained for 180 days with documentary attribution to maritime pressure",
+      "falsifier": "An agreed concession is reversed within 180 days, or a completed negotiation produces none.",
+      "support": "Documented policy reversal tied to coercion",
+      "alternative": "Routine diplomacy, unrelated bargains and temporary ceasefires are competing explanations.",
+      "version": 1,
+      "baseline": "2026-11-12",
+      "horizon": "2027-11-13",
+      "status": "draft",
+      "owner": "millxing",
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+    },
+    {
+      "id": "H4",
+      "title": "Regional alignment",
+      "statement": "Regional states increasingly accommodate Iran.",
+      "geography": "GCC states, Iraq, Turkey, Egypt",
+      "effect": "Two new substantive security or economic agreements favorable to Iran, sustained for 180 days",
+      "falsifier": "Defense integration against Iran increases with no comparable accommodation.",
+      "support": "Durable favorable security and economic arrangements",
+      "alternative": "Hedging can produce both accommodation and balancing; count both.",
+      "version": 1,
+      "baseline": "2026-11-12",
+      "horizon": "2027-11-13",
+      "status": "draft",
+      "owner": "millxing",
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+    },
+    {
+      "id": "H5",
+      "title": "Nuclear trajectory",
+      "statement": "Attacks increase long-run nuclear reconstitution incentives.",
+      "geography": "Iranian nuclear policy and verified facilities",
+      "effect": "Verified rebuilding plus independently documented policy hardening within 24 months",
+      "falsifier": "Verified capacity reduction and cooperative inspection sustained for 12 months.",
+      "support": "Verified reconstruction and policy hardening",
+      "alternative": "Inspection gaps are uncertainty; technical capacity and political intent are separate.",
+      "version": 1,
+      "baseline": "2026-11-12",
+      "horizon": "2028-11-13",
+      "status": "draft",
+      "owner": "millxing",
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+    },
+    {
+      "id": "H6",
+      "title": "Net strategic power",
+      "statement": "Iran\u2019s net strategic power rises.",
+      "geography": "Iran relative to its pre-campaign position",
+      "effect": "Improvement across military regeneration, real trade and durable diplomatic influence over 24 months",
+      "falsifier": "Deterioration in at least two dimensions sustained for 12 months.",
+      "support": "Broad improvement in resilience and bargaining outcomes",
+      "alternative": "Survival and disruption alone do not show an increase in net power.",
+      "version": 1,
+      "baseline": "2026-11-12",
+      "horizon": "2028-11-13",
+      "status": "draft",
+      "owner": "millxing",
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+    }
+  ],
+  "assessments": [
+    {
+      "claim": "H1",
+      "version": 1,
+      "date": "2026-11-12",
+      "recorded_at": "2026-11-13",
+      "baseline": true,
+      "level": 0,
+      "approved": false,
+      "reviewer": "Codex \u00b7 provisional initialization",
+      "uncertainty": "High; incomplete evidence search",
+      "evidence": [],
+      "rationale": "No preregistered campaign objectives and matched outcomes have yet been assembled. Regime survival cannot resolve this claim. Retrospective, provisional analyst judgment using publications dated before the cutoff; no archived as-of snapshot or human approval."
+    },
+    {
+      "claim": "H2",
+      "version": 1,
+      "date": "2026-11-12",
+      "recorded_at": "2026-11-13",
+      "baseline": true,
+      "level": 2,
+      "approved": false,
+      "reviewer": "Codex \u00b7 provisional initialization",
+      "uncertainty": "High; incomplete evidence search",
+      "evidence": [
+        "E001"
+      ],
+      "rationale": "Limited support: the EIA series shows a substantial decline in estimated oil passage. Attribution and persistence under countermeasures remain unverified, so the evidence does not warrant moderate or stronger support. Retrospective, provisional analyst judgment using publications dated before the cutoff; no archived as-of snapshot or human approval."
+    },
+    {
+      "claim": "H3",
+      "version": 1,
+      "date": "2026-11-12",
+      "recorded_at": "2026-11-13",
+      "baseline": true,
+      "level": 0,
+      "approved": false,
+      "reviewer": "Codex \u00b7 provisional initialization",
+      "uncertainty": "High; incomplete evidence search",
+      "evidence": [
+        "E003"
+      ],
+      "rationale": "No reviewed documentary chain connects maritime pressure to a concession sustained for 180 days. Sanctions show costs, not the absence of all concessions. Insufficient evidence. Retrospective, provisional analyst judgment using publications dated before the cutoff; no archived as-of snapshot or human approval."
+    },
+    {
+      "claim": "H4",
+      "version": 1,
+      "date": "2026-11-12",
+      "recorded_at": "2026-11-13",
+      "baseline": true,
+      "level": -1,
+      "approved": false,
+      "reviewer": "Codex \u00b7 provisional initialization",
+      "uncertainty": "High; incomplete evidence search",
+      "evidence": [
+        "E004"
+      ],
+      "rationale": "Slight challenge: the US security guarantee for Qatar is consistent with external balancing. One state and one agreement cannot establish the regional trend; accommodation may coexist. Retrospective, provisional analyst judgment using publications dated before the cutoff; no archived as-of snapshot or human approval."
+    },
+    {
+      "claim": "H5",
+      "version": 1,
+      "date": "2026-11-12",
+      "recorded_at": "2026-11-13",
+      "baseline": true,
+      "level": 0,
+      "approved": false,
+      "reviewer": "Codex \u00b7 provisional initialization",
+      "uncertainty": "High; incomplete evidence search",
+      "evidence": [
+        "E002"
+      ],
+      "rationale": "Inspection gaps establish uncertainty, not incentives or weaponization. Verified rebuilding and a separate policy-intent measure are still required. Retrospective, provisional analyst judgment using publications dated before the cutoff; no archived as-of snapshot or human approval."
+    },
+    {
+      "claim": "H6",
+      "version": 1,
+      "date": "2026-11-12",
+      "recorded_at": "2026-11-13",
+      "baseline": true,
+      "level": -2,
+      "approved": false,
+      "reviewer": "Codex \u00b7 provisional initialization",
+      "uncertainty": "High; incomplete evidence search",
+      "evidence": [
+        "E003",
+        "E005"
+      ],
+      "rationale": "Limited challenge: renewed EU sanctions and the IMF adverse growth assessment show diplomatic and economic costs. Military regeneration and durable influence are not measured, so a stronger judgment is not warranted. Retrospective, provisional analyst judgment using publications dated before the cutoff; no archived as-of snapshot or human approval."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E001",
+      "claims": [
+        "H2"
+      ],
+      "title": "Hormuz oil flows: published quarterly estimates",
+      "publisher": "U.S. EIA",
+      "url": "https://www.eia.gov/outlooks/steo/report/energysecurity/article.php",
+      "document": "Global Energy Security Data, Table 4",
+      "published": "2026-08-12",
+      "observed": "2026-06-30",
+      "collected": "2026-11-13",
+      "type": "Proxy measurement",
+      "direction": "Potential support",
+      "cluster": "hormuz-flows-2026",
+      "reliability": "Official estimate; underlying commercial tracking",
+      "excerpt": "Total oil flows through the Strait of Hormuz | 20.9 | 21.0 | 21.3 | 21.6 | 14.9 | 4.9",
+      "rationale": "Lower estimated flow is consistent with disruption. It does not identify the cause or prove retained capability under countermeasures.",
+      "confounders": "Demand, supply cuts, rerouting, tracking gaps.",
+      "missingness": "No provider coverage denominator or uncertainty interval supplied.",
+      "status": "Pending review",
+      "license": "EIA published table; upstream commercial data not redistributed.",
+      "effect": "Quarterly oil flow, million barrels/day",
+      "correction_of": null
+    },
+    {
+      "id": "E002",
+      "claims": [
+        "H5"
+      ],
+      "title": "IAEA reports a verification gap after the June 2025 attacks",
+      "publisher": "IAEA",
+      "url": "https://www.iaea.org/sites/default/files/documents/gov2025-50.pdf",
+      "document": "GOV/2025/50, paragraph 8",
+      "published": "2025-09-03",
+      "observed": "2025-09-03",
+      "collected": "2026-11-13",
+      "type": "Direct institutional report",
+      "direction": "Uncertainty only",
+      "cluster": "iran-inspections-2025",
+      "reliability": "Primary institutional report; historical",
+      "excerpt": "Consequently, the Agency stopped conducting verification activities in Iran.",
+      "rationale": "Historical loss of access limits inference. This does not establish weaponization or increased incentives.",
+      "confounders": "Safety restrictions and cooperation policy.",
+      "missingness": "Not a statement about current inspection access.",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original document linked.",
+      "effect": "Verification access unavailable at reported facilities except Bushehr",
+      "correction_of": null
+    },
+    {
+      "id": "E003",
+      "claims": [
+        "H3",
+        "H6"
+      ],
+      "title": "EU reimposes nuclear-related sanctions",
+      "publisher": "Council of the European Union",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/09/29/iran-sanctions-snapback-council-reimposes-restrictive-measures/",
+      "document": "Council press release 760/25",
+      "published": "2025-09-29",
+      "observed": "2025-09-29",
+      "collected": "2026-11-13",
+      "type": "Direct institutional report",
+      "direction": "Potential challenge",
+      "cluster": "sanctions-snapback-2025",
+      "reliability": "Primary published institutional statement",
+      "excerpt": "the Council agreed to reimpose a number of restrictive measures",
+      "rationale": "Sanctions are a diplomatic and economic cost. They challenge an unqualified rise in power but do not resolve whether maritime coercion secured some other concession.",
+      "confounders": "Nuclear compliance dispute; not necessarily a response to maritime pressure.",
+      "missingness": "Later outcomes and persistence require review.",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original linked.",
+      "effect": "Qualitative policy / economic evidence",
+      "correction_of": null
+    },
+    {
+      "id": "E004",
+      "claims": [
+        "H4"
+      ],
+      "title": "United States guarantees Qatar against external attack",
+      "publisher": "The White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/09/assuring-the-security-of-the-state-of-qatar/",
+      "document": "Executive Order 14353",
+      "published": "2025-09-29",
+      "observed": "2025-09-29",
+      "collected": "2026-11-13",
+      "type": "Direct institutional report",
+      "direction": "Potential challenge",
+      "cluster": "qatar-security-2025",
+      "reliability": "Primary published institutional statement",
+      "excerpt": "guarantee the security and territorial integrity of the State of Qatar against external attack",
+      "rationale": "A formal US security commitment is consistent with continued external balancing, but is not evidence that Qatar ceased accommodating Iran.",
+      "confounders": "The order addresses external attack generally. Its adoption cannot be attributed solely to Iran; threats from Israel are an alternative context.",
+      "missingness": "Later outcomes and persistence require review.",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original linked.",
+      "effect": "Qualitative policy / economic evidence",
+      "correction_of": null
+    },
+    {
+      "id": "E005",
+      "claims": [
+        "H6"
+      ],
+      "title": "IMF revises Iranian growth downward amid conflict",
+      "publisher": "International Monetary Fund",
+      "url": "https://www.imf.org/-/media/files/publications/weo/2026/october/english/text.pdf",
+      "document": "World Economic Outlook, October 2026, page 13",
+      "published": "2026-10-13",
+      "observed": "2026-10-13",
+      "collected": "2026-11-13",
+      "type": "Expert assessment / forecast",
+      "direction": "Potential challenge",
+      "cluster": "iran-economic-costs-2026",
+      "reliability": "Primary published institutional statement",
+      "excerpt": "Growth in Iran in 2026 is revised downward",
+      "rationale": "An adverse economic outlook challenges the economic dimension of rising strategic power. A forecast is not a realized GDP result.",
+      "confounders": "Conflict, blockade and sanctions overlap; diplomatic and military dimensions remain incomplete.",
+      "missingness": "Later outcomes and persistence require review.",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original linked.",
+      "effect": "Qualitative policy / economic evidence",
+      "correction_of": null
+    }
+  ],
+  "series": {
+    "name": "Oil through the Strait of Hormuz",
+    "unit": "million barrels / day",
+    "source": "E001",
+    "baseline": 20.9,
+    "baselineLabel": "Q1 2025 reference",
+    "points": [
+      {
+        "date": "2025-03-31",
+        "label": "Q1 25",
+        "value": 20.9
+      },
+      {
+        "date": "2025-06-30",
+        "label": "Q2 25",
+        "value": 21
+      },
+      {
+        "date": "2025-09-30",
+        "label": "Q3 25",
+        "value": 21.3
+      },
+      {
+        "date": "2025-12-31",
+        "label": "Q4 25",
+        "value": 21.6
+      },
+      {
+        "date": "2026-03-31",
+        "label": "Q1 26",
+        "value": 14.9
+      },
+      {
+        "date": "2026-06-30",
+        "label": "Q2 26",
+        "value": 4.9
+      }
+    ]
+  },
+  "audit": [
+    {
+      "date": "2026-11-13",
+      "actor": "Codex",
+      "action": "Created draft claim tests and provisional November 12 baseline assessments. Five source records; no human approval.",
+      "approved": false
+    }
+  ],
+  "gaps": [
+    {
+      "name": "AIS transit coverage",
+      "state": "Not connected",
+      "detail": "No daily AIS feed or coverage denominator. Quarterly EIA oil flow is a proxy, not a vessel count."
+    },
+    {
+      "name": "War-risk insurance",
+      "state": "Not connected",
+      "detail": "No licensed premium series. Prices are not imputed."
+    },
+    {
+      "name": "Nuclear verification",
+      "state": "Historical only",
+      "detail": "September 2025 report available. Current access and material accounting need review."
+    },
+    {
+      "name": "Diplomatic concessions",
+      "state": "Review required",
+      "detail": "No attributed, durable concession entered. Missing evidence is not evidence of absence."
+    },
+    {
+      "name": "Regional / net power",
+      "state": "Not connected",
+      "detail": "Treaty, trade, fiscal and military regeneration series require curation."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+name: Evidence review
+description: Review a claim or propose a confidence change
+title: "[Review] H2 — "
+body:
+  - type: textarea
+    id: review
+    attributes:
+      label: Review record
+      description: Include claim/version, source URLs, publication and observation dates, exact excerpt, direction, dependence cluster, confounders, proposed level (-5 to +5), uncertainty and rationale. Do not paste restricted source documents.
+    validations:
+      required: true
