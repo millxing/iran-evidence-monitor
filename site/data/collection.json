@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-11-13T19:44:47.008487+00:00",
+  "checked_at": "2026-11-13T23:39:21.233871+00:00",
   "sources": [
     {
       "name": "EIA energy security",
       "url": "https://www.eia.gov/outlooks/steo/report/energysecurity/article.php",
-      "checked_at": "2026-11-13T19:44:47.008487+00:00",
+      "checked_at": "2026-11-13T23:39:21.233871+00:00",
       "status": "Retrieved; not reviewed",
       "hash": "812535df648559d204165128b3f5f8835c8aab846107feb082670b80d998bd85",
-      "last_success": "2026-11-13T19:44:47.008487+00:00"
+      "last_success": "2026-11-13T23:39:21.233871+00:00"
     },
     {
       "name": "IAEA Iran updates",
       "url": "https://www.iaea.org/newscenter/focus/iran",
-      "checked_at": "2026-11-13T19:44:47.008487+00:00",
+      "checked_at": "2026-11-13T23:39:21.233871+00:00",
       "status": "Collection failed",
       "error": "HTTP Error 403: Forbidden",
       "hash": null,
@@ -21,10 +21,10 @@
     {
       "name": "UKMTO notices",
       "url": "https://www.ukmto.org/",
-      "checked_at": "2026-11-13T19:44:47.008487+00:00",
+      "checked_at": "2026-11-13T23:39:21.233871+00:00",
       "status": "Retrieved; not reviewed",
-      "hash": "525ae4dc2d896f8318170d423b1f155c17eb5ab4d3c625bfb1d22b02b0e6651f",
-      "last_success": "2026-11-13T19:44:47.008487+00:00"
+      "hash": "0c1a2da879d39f4e7a12cbf0c9fc17ebfa10d7606a943b37b5f8bfd75e9250a3",
+      "last_success": "2026-11-13T23:39:21.233871+00:00"
     }
   ],
   "candidates": [
@@ -41,6 +41,14 @@
       "url": "https://www.ukmto.org/",
       "hash": "525ae4dc2d896f8318170d423b1f155c17eb5ab4d3c625bfb1d22b02b0e6651f",
       "detected_at": "2026-11-13T19:44:47.008487+00:00",
+      "status": "pending",
+      "note": "Page bytes changed or first retrieval. May be navigation or layout only."
+    },
+    {
+      "name": "UKMTO notices",
+      "url": "https://www.ukmto.org/",
+      "hash": "0c1a2da879d39f4e7a12cbf0c9fc17ebfa10d7606a943b37b5f8bfd75e9250a3",
+      "detected_at": "2026-11-13T23:39:21.233871+00:00",
       "status": "pending",
       "note": "Page bytes changed or first retrieval. May be navigation or layout only."
     }
