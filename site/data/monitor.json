@@ -341,34 +341,54 @@
       {
         "date": "2025-03-31",
         "label": "Q1 25",
-        "value": 20.9
+        "value": 20.9,
+        "crude": 14.8,
+        "products": 6.2,
+        "lng": 11.7
       },
       {
         "date": "2025-06-30",
         "label": "Q2 25",
-        "value": 21
+        "value": 21,
+        "crude": 14.9,
+        "products": 6.2,
+        "lng": 11.0
       },
       {
         "date": "2025-09-30",
         "label": "Q3 25",
-        "value": 21.3
+        "value": 21.3,
+        "crude": 15.0,
+        "products": 6.3,
+        "lng": 10.9
       },
       {
         "date": "2025-12-31",
         "label": "Q4 25",
-        "value": 21.6
+        "value": 21.6,
+        "crude": 15.9,
+        "products": 5.7,
+        "lng": 10.5
       },
       {
         "date": "2026-03-31",
         "label": "Q1 26",
-        "value": 14.9
+        "value": 14.9,
+        "crude": 10.9,
+        "products": 4.0,
+        "lng": 7.4
       },
       {
         "date": "2026-06-30",
         "label": "Q2 26",
-        "value": 4.9
+        "value": 4.9,
+        "crude": 3.7,
+        "products": 1.1,
+        "lng": 0.8
       }
-    ]
+    ],
+    "scope": "Crude oil and condensate plus petroleum products moving through the strait. LNG is reported separately and is not in the total.",
+    "note": "Source table: EIA analysis based on Vortexa tanker-tracking data. EIA states that AIS data for Hormuz have been especially unreliable since the end of February 2026 and that 2026 figures are revised frequently."
   },
   "audit": [
     {
@@ -388,13 +408,19 @@
       "actor": "Claude (at owner request)",
       "action": "Added plain-language summaries for H1 and H5 (formal statements unchanged) and reworded coverage-gap descriptions. No level changed.",
       "approved": false
+    },
+    {
+      "date": "2026-11-13",
+      "actor": "Claude (at owner request)",
+      "action": "Added the EIA crude, products and LNG breakdown to the Hormuz series (from E001, Table 4), an AIS reliability note, and a display-only gap entry for economic context. No level, evidence direction or statement changed.",
+      "approved": false
     }
   ],
   "gaps": [
     {
       "name": "AIS transit coverage",
       "state": "Display only",
-      "detail": "Daily IMF PortWatch ship counts are shown but not scored. The total number of ships is not known, and AIS misses ships with transponders switched off."
+      "detail": "Daily IMF PortWatch ship counts are shown but not scored. The total number of ships is not known, and AIS misses ships with transponders switched off. EIA states that Hormuz AIS data have been especially unreliable since the end of February 2026."
     },
     {
       "name": "War-risk insurance",
@@ -415,6 +441,11 @@
       "name": "Regional / net power",
       "state": "Not connected",
       "detail": "Treaty, trade, budget and military-rebuilding data still need to be collected and checked."
+    },
+    {
+      "name": "Iran economy and oil price",
+      "state": "Display only",
+      "detail": "Brent price, the open-market rial rate and annual inflation are shown as context, not scored. The rial rate comes from an unofficial market-data site. Annual inflation is published with a delay of months."
     }
   ]
 }

@@ -16,6 +16,10 @@ Scale: 0 inconclusive; magnitude 1 slight, 2 limited, 3 moderate, 4 strong, 5 ve
 
 `scripts/transits.py` fetches daily Strait of Hormuz transit counts from IMF PortWatch (AIS-based estimates) into `site/data/transits.json`. The scheduled workflow runs it daily. On failure it keeps the last good data and records the error. The counts are display-only context for H2; they never change a level.
 
+## Oil price and Iran's economy
+
+`scripts/markets.py` fetches three display-only series into `site/data/markets.json`: the daily Brent spot price (U.S. EIA), the daily open-market US dollar rate in Iranian rials (tgju.org; unofficial market data, not the official rate), and annual consumer-price inflation for Iran (World Bank, `FP.CPI.TOTL.ZG`). The scheduled workflow runs it daily. Each series is fetched separately; on failure the last good rows are kept and the error is recorded. These series are context for H2, H3 and H6. They are not evidence records and never change a level. The EIA Hormuz table (E001) is shown with its crude, products and LNG breakdown.
+
 ## Updating
 
 1. Add source observations to `monitor.json` with full provenance, claim links, a `direction` (and an optional `directions` map by claim ID when the direction differs between claims), uncertainty, dependence cluster, correction/retraction links, and excerpts within permitted reuse. Never overwrite a corrected observation: append a replacement and link it with `correction_of`.

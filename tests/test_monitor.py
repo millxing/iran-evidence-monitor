@@ -37,4 +37,13 @@ class MonitorTests(unittest.TestCase):
   t=json.loads((ROOT/'site/data/transits.json').read_text());rows=t['rows'];self.assertTrue(rows)
   dates=[r[0] for r in rows];self.assertEqual(dates,sorted(set(dates)))
   for d,total,tanker in rows:datetime.date.fromisoformat(d);self.assertTrue(0<=tanker<=total)
+ def test_market_series_valid(self):
+  m=json.loads((ROOT/'site/data/markets.json').read_text())
+  for k in ('brent','rial'):
+   rows=m[k]['rows'];self.assertTrue(rows,k);dates=[r[0] for r in rows];self.assertEqual(dates,sorted(set(dates)),k)
+   for d,v in rows:datetime.date.fromisoformat(d);self.assertGreater(v,0)
+  years=[r[0] for r in m['inflation']['rows']];self.assertEqual(years,sorted(set(years)))
+ def test_oil_breakdown_consistent(self):
+  for p in self.d['series']['points']:
+   if 'crude' in p:self.assertLessEqual(abs(p['crude']+p['products']-p['value']),0.15,p)
 if __name__=='__main__':unittest.main()

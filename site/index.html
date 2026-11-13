@@ -46,6 +46,7 @@
   <nav aria-label="Sections" class="wrap">
     <a href="#claims">Claims</a>
     <a href="#hormuz">Hormuz</a>
+    <a href="#economy">Economy</a>
     <a href="#evidence">Evidence</a>
     <a href="#sensitivity">Independence</a>
     <a href="#history">History</a>
@@ -117,12 +118,52 @@
         </label>
       </div>
       <div id="chart" class="chart"></div>
-      <p class="caption">Source: U.S. Energy Information Administration, quarterly estimates; series ends Q2 2026 (30 Jun). No uncertainty interval is published. Flow is a proxy: a drop can come from disruption, lower demand, supply cuts or rerouting.</p>
+      <p class="caption">Crude oil, condensate and refined products shipped out of the Persian Gulf through the strait. LNG is counted separately and is not in this total. Source: <a href="https://www.eia.gov/outlooks/steo/report/energysecurity/article.php" target="_blank" rel="noopener">U.S. Energy Information Administration<span class="ext" aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>, Table 4, quarterly estimates from Vortexa tanker tracking; series ends Q2 2026 (30 Jun). EIA revises the 2026 figures often and publishes no uncertainty interval. Flow is a proxy: a drop can come from disruption, lower demand, supply cuts, or oil sent by pipeline around the strait.</p>
       <details>
-        <summary>Data table</summary>
+        <summary>Data table, with crude, products and LNG</summary>
         <div id="raw"></div>
       </details>
     </div>
+  </section>
+
+  <section id="economy" aria-labelledby="economy-h">
+    <div class="section-head">
+      <h2 id="economy-h">Oil price and Iran’s economy</h2>
+      <label class="control">Period
+        <select id="econWindow">
+          <option value="90">Last 90 days</option>
+          <option value="2025" selected>Since Jan 2025</option>
+          <option value="all">Since Jan 2019</option>
+        </select>
+      </label>
+    </div>
+    <p class="sub">Context for claims H2, H3 and H6. These series are not scored and do not change a level. A price or currency move does not show its cause.</p>
+    <p id="econLive" class="visually-hidden" aria-live="polite"></p>
+
+    <div class="subsection">
+      <h3 id="brent-h">Brent crude oil, US dollars per barrel</h3>
+      <p id="brentReadout" class="readout"></p>
+      <div id="brentChart" class="chart"></div>
+      <p class="caption chart-hint" id="econHint">Hover or tap a daily chart to read values; with the keyboard, focus it and use the arrow keys.</p>
+      <p id="brentSource" class="caption"></p>
+    </div>
+
+    <div class="subsection">
+      <h3 id="rial-h">US dollar in Iranian rials, open market</h3>
+      <p id="rialReadout" class="readout"></p>
+      <div id="rialChart" class="chart"></div>
+      <p id="rialSource" class="caption"></p>
+    </div>
+
+    <div class="subsection">
+      <h3 id="infl-h">Iran consumer-price inflation, percent per year</h3>
+      <div id="inflChart" class="chart"></div>
+      <p id="inflSource" class="caption"></p>
+    </div>
+    <details>
+      <summary>Monthly averages for this period</summary>
+      <div id="econRaw"></div>
+    </details>
   </section>
 
   <section id="evidence" aria-labelledby="evidence-h">
@@ -204,7 +245,7 @@
         <h3>Cutoff</h3>
         <p>Baseline cutoff: 12 November 2026, 23:59:59 UTC. Sources were retrieved on 13 November, so their content on the cutoff date is not confirmed. The tests were written after the events they cover.</p>
         <h3>Updates and limits</h3>
-        <p>“Not machine-verified” marks a record whose source could not be fetched automatically; its content was checked by hand and has no file hash. A daily job detects changes to registered source pages and updates the ship counts. It does not score evidence. Insurance, treaty, economic and military data are not connected. There is no forecast model.</p>
+        <p>“Not machine-verified” marks a record whose source could not be fetched automatically; its content was checked by hand and has no file hash. A daily job detects changes to registered source pages and updates the ship counts. It also updates the Brent price, the open-market rial rate and annual inflation, shown as context only. It does not score evidence. Insurance, treaty and military data are not connected. There is no forecast model.</p>
       </div>
     </div>
   </section>
@@ -214,6 +255,7 @@
   <a href="https://github.com/millxing/iran-evidence-monitor">Repository</a>
   <a href="data/monitor.json" download>Claims and evidence (JSON)</a>
   <a href="data/transits.json" download>Ship counts (JSON)</a>
+  <a href="data/markets.json" download>Oil price and economy (JSON)</a>
   <a href="data/collection.json" download>Source checks (JSON)</a>
 </div></footer>
 

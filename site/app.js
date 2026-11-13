@@ -206,6 +206,26 @@ const toTime = (iso) => Date.parse(`${iso}T00:00:00Z`);
 const avg7 = (vals) => vals.map((_, i) => (i < 6 ? null : vals.slice(i - 6, i + 1).reduce((a, b) => a + b, 0) / 7));
 let transitState = null;
 
+// Year ticks for long spans, month ticks otherwise; spacing depends on the plot width in pixels.
+function timeTicks(start, endT, plotW) {
+  const span = (endT - start) / DAY;
+  const pxPerMonth = plotW / (span / 30.4);
+  const ticks = [];
+  const d0 = new Date(start);
+  if (span > 800) {
+    for (let yr = d0.getUTCFullYear() + 1; ; yr++) { const t = Date.UTC(yr, 0, 1); if (t > endT) break; ticks.push([t, String(yr)]); }
+  } else {
+    const every = [1, 2, 3, 6].find((n) => n * pxPerMonth >= 44) || 6;
+    for (let m = d0.getUTCMonth() + (d0.getUTCDate() > 1 ? 1 : 0), yr = d0.getUTCFullYear(); ; m++) {
+      const t = Date.UTC(yr, m, 1);
+      if (t > endT) break;
+      const dm = new Date(t);
+      if (dm.getUTCMonth() % every === 0) ticks.push([t, dm.getUTCMonth() === 0 ? String(dm.getUTCFullYear()) : MONTHS[dm.getUTCMonth()]]);
+    }
+  }
+  return ticks;
+}
+
 function prepTransits(t) {
   const rows = t.rows.map(([date, total, tanker]) => ({ date, t: toTime(date), total, tanker }));
   const a = avg7(rows.map((r) => r.total)), k = avg7(rows.map((r) => r.tanker));
@@ -271,22 +291,7 @@ function transitChart() {
   const step = max <= 60 ? 20 : max <= 160 ? 40 : 50;
   const grid = [];
   for (let v = 0; v <= max; v += step) grid.push(`<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text class="axis-text" x="${L - 8}" y="${y(v) + 4}" text-anchor="end">${v}</text>`);
-  // Year ticks for long spans, month ticks otherwise; spacing depends on the rendered width.
-  const span = (endT - start) / DAY;
-  const pxPerMonth = (W - L - R) / (span / 30.4);
-  const ticks = [];
-  const d0 = new Date(start);
-  if (span > 800) {
-    for (let yr = d0.getUTCFullYear() + 1; ; yr++) { const t = Date.UTC(yr, 0, 1); if (t > endT) break; ticks.push([t, String(yr)]); }
-  } else {
-    const every = [1, 2, 3, 6].find((n) => n * pxPerMonth >= 44) || 6;
-    for (let m = d0.getUTCMonth() + (d0.getUTCDate() > 1 ? 1 : 0), yr = d0.getUTCFullYear(); ; m++) {
-      const t = Date.UTC(yr, m, 1);
-      if (t > endT) break;
-      const dm = new Date(t);
-      if (dm.getUTCMonth() % every === 0) ticks.push([t, dm.getUTCMonth() === 0 ? String(dm.getUTCFullYear()) : MONTHS[dm.getUTCMonth()]]);
-    }
-  }
+  const ticks = timeTicks(start, endT, W - L - R);
   const ref = T.ref2025;
   const last = ps.at(-1);
   // Direct labels at the right end of each line; nudge apart when they would overlap.
@@ -355,7 +360,7 @@ function transitChart() {
   svg.addEventListener('blur', clearHover);
   clearHover();
 
-  $('#transitSource').innerHTML = `Source: <a href="${esc(T.url)}" target="_blank" rel="noopener">IMF PortWatch${ext}</a>, daily estimates from AIS ship signals, which miss ships with transponders switched off. Data to ${fmtDate(T.rows.at(-1).date)}; retrieved ${fmtDate(T.retrieved_at)}; figures can be revised.` + (T.error ? ` <span class="tag tag-bad">Last update failed</span>` : '');
+  $('#transitSource').innerHTML = `Source: <a href="${esc(T.url)}" target="_blank" rel="noopener">IMF PortWatch${ext}</a>, daily estimates from AIS ship signals, which miss ships with transponders switched off. EIA states that Hormuz AIS data have been especially unreliable since the end of February 2026, so part of the drop can come from ships that are not detected. Data to ${fmtDate(T.rows.at(-1).date)}; retrieved ${fmtDate(T.retrieved_at)}; figures can be revised.` + (T.error ? ` <span class="tag tag-bad">Last update failed</span>` : '');
 
   // Monthly averages for the selected period: a compact, complete text alternative to the chart.
   const months = new Map();
@@ -394,7 +399,201 @@ function chart() {
         `<text class="axis-text" x="${x(i)}" y="${H - 8}" text-anchor="middle">${p.label}</text>`;
     }).join('')}
   </svg>`;
-  $('#raw').innerHTML = `<table><thead><tr><th scope="col">Quarter ending</th><th scope="col" class="num">Million b/d</th></tr></thead><tbody>${ps.map((p) => `<tr><td>${fmtDate(p.date)}</td><td class="num">${p.value.toFixed(1)}</td></tr>`).join('')}</tbody></table>`;
+  const n1 = (v) => (v == null ? '—' : v.toFixed(1));
+  $('#raw').innerHTML = `<div class="table-scroll"><table><thead><tr><th scope="col">Quarter ending</th><th scope="col" class="num">Total oil</th><th scope="col" class="num">Crude</th><th scope="col" class="num">Products</th><th scope="col" class="num">LNG</th></tr></thead><tbody>${ps.map((p) => `<tr><td>${fmtDate(p.date)}</td><td class="num">${n1(p.value)}</td><td class="num">${n1(p.crude)}</td><td class="num">${n1(p.products)}</td><td class="num">${n1(p.lng)}</td></tr>`).join('')}</tbody></table></div><p class="caption">Oil columns in million barrels per day; crude includes condensate. LNG in billion cubic feet per day; it is not part of the oil total. Crude plus products can differ from the total by 0.1 because of rounding.</p>`;
+}
+
+/* ---------- Oil price and Iran's economy (display only; never scored) ---------- */
+
+let M = null;
+const econState = {};
+const fmtNum = (v, d = 0) => v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+const niceStep = (range, n) => {
+  const raw = range / n, p = 10 ** Math.floor(Math.log10(raw));
+  return [1, 2, 2.5, 5, 10].map((m) => m * p).find((x) => x >= raw);
+};
+const ECON = {
+  brent: {
+    title: 'Brent crude oil price, US dollars per barrel',
+    value: (v) => `$${v.toFixed(2)}`,
+    axis: (v) => `$${fmtNum(v)}`,
+    short: (v) => `$${v.toFixed(0)}`,
+    zero: false,
+  },
+  rial: {
+    title: 'US dollar in Iranian rials, open market',
+    value: (v) => `${fmtNum(v)} rials`,
+    axis: (v) => (v === 0 ? '0' : v >= 1e6 ? `${fmtNum(v / 1e6, v % 1e6 ? 1 : 0)}M` : `${fmtNum(v / 1e3)}k`),
+    short: (v) => `${fmtNum(v / 1e6, 2)}M`,
+    zero: true,
+  },
+};
+
+function econRows(key) {
+  const s = M && M[key];
+  if (!s || !s.rows.length) return null;
+  const rows = s.rows.map(([date, v]) => ({ date, t: toTime(date), v }));
+  const y25 = rows.filter((r) => r.date.startsWith('2025'));
+  return { rows, ref: y25.length ? y25.reduce((a, r) => a + r.v, 0) / y25.length : null };
+}
+
+function econStart(rows) {
+  const win = $('#econWindow').value, lastT = rows.at(-1).t;
+  return win === '90' ? lastT - 89 * DAY : win === '2025' ? toTime('2025-01-01') : rows[0].t;
+}
+
+function econReadout(key, r) {
+  const c = ECON[key], st = econState[key];
+  $(`#${key}Readout`).innerHTML = `${fmtDate(r.date)}: <b>${c.value(r.v)}</b>` + (st.ref ? ` · 2025 average ${c.value(st.ref)}` : '');
+}
+
+function econHover(key, i) {
+  const st = econState[key];
+  if (!st) return;
+  st.i = Math.max(0, Math.min(st.ps.length - 1, i));
+  const r = st.ps[st.i];
+  const line = $(`#${key}HoverLine`), dot = $(`#${key}HoverDot`);
+  line.setAttribute('x1', st.x(r.t)); line.setAttribute('x2', st.x(r.t)); line.setAttribute('visibility', 'visible');
+  dot.setAttribute('cx', st.x(r.t)); dot.setAttribute('cy', st.y(r.v)); dot.setAttribute('visibility', 'visible');
+  econReadout(key, r);
+}
+
+function econClear(key) {
+  $(`#${key}HoverLine`)?.setAttribute('visibility', 'hidden');
+  $(`#${key}HoverDot`)?.setAttribute('visibility', 'hidden');
+  const st = econState[key];
+  if (st) econReadout(key, st.ps.at(-1));
+}
+
+function dailyChart(key) {
+  const host = $(`#${key}Chart`), c = ECON[key], data = econRows(key);
+  if (!data) {
+    host.innerHTML = '<p class="empty">Data is not available.</p>';
+    $(`#${key}Readout`).textContent = '';
+    return;
+  }
+  const { rows, ref } = data;
+  const start = econStart(rows);
+  const ps = rows.filter((r) => r.t >= start);
+  const lastT = rows.at(-1).t, cutoff = toTime(BASELINE_DATE), endT = Math.max(lastT, cutoff);
+  const small = phone.matches;
+  const W = chartWidth(host, 760), H = small ? 230 : 250;
+  const L = 52, R = small ? 12 : 130, Tp = 22, B = 30;
+  let lo = Math.min(...ps.map((r) => r.v)), hi = Math.max(...ps.map((r) => r.v));
+  if (ref != null) { lo = Math.min(lo, ref); hi = Math.max(hi, ref); }
+  if (c.zero) lo = 0;
+  const step = niceStep(hi - lo || hi, 4);
+  const y0 = Math.floor(lo / step) * step, y1 = Math.ceil(hi / step) * step;
+  const x = (t) => L + (W - L - R) * (t - start) / Math.max(DAY, endT - start);
+  const y = (v) => Tp + (H - Tp - B) * (1 - (v - y0) / (y1 - y0));
+  const grid = [];
+  for (let v = y0; v <= y1 + step / 2; v += step) grid.push(`<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text class="axis-text" x="${L - 8}" y="${y(v) + 4}" text-anchor="end">${c.axis(v)}</text>`);
+  const ticks = timeTicks(start, endT, W - L - R);
+  const d = ps.map((r, i) => `${i ? 'L' : 'M'}${x(r.t).toFixed(1)},${y(r.v).toFixed(1)}`).join('');
+  const last = ps.at(-1);
+  // Direct labels at the right end; nudge apart when they would overlap.
+  const labels = [{ cls: 'lab-avg', text: `${c.short(last.v)} on ${fmtDate(last.date).replace(/ \d{4}$/, '')}`, py: y(last.v) + 4 }];
+  if (ref != null) labels.push({ cls: 'lab-ref', text: `2025 avg ${c.short(ref)}`, py: y(ref) + 4 });
+  if (labels.length === 2 && Math.abs(labels[0].py - labels[1].py) < 16) {
+    const [a, b] = labels[0].py <= labels[1].py ? [labels[0], labels[1]] : [labels[1], labels[0]];
+    const mid = (a.py + b.py) / 2;
+    a.py = mid - 8; b.py = mid + 8;
+  }
+  const firstDraw = !host.dataset.drawn;
+  host.dataset.drawn = '1';
+  host.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" tabindex="0" role="group" aria-roledescription="chart" aria-describedby="econHint"
+      aria-label="${c.title}, ${fmtDate(ps[0].date)} to ${fmtDate(last.date)}. Latest ${c.value(last.v)}${ref ? `; 2025 average ${c.value(ref)}` : ''}. Use left and right arrow keys to read daily values.">
+    ${grid.join('')}
+    ${ticks.map(([t, lab]) => `<text class="axis-text" x="${x(t)}" y="${H - 8}" text-anchor="middle">${lab}</text>`).join('')}
+    ${ref != null ? `<line class="ref" x1="${L}" x2="${x(endT)}" y1="${y(ref)}" y2="${y(ref)}"/>` : ''}
+    ${cutoff >= start ? `<line class="cutoff" x1="${x(cutoff)}" x2="${x(cutoff)}" y1="${Tp - 4}" y2="${H - B}"/>` : ''}
+    <path class="avg${firstDraw ? ' draw' : ''}"${firstDraw ? ' pathLength="1"' : ''} d="${d}"/>
+    ${small ? '' : labels.map((l) => `<text class="lab ${l.cls}" x="${x(endT) + 8}" y="${l.py}">${l.text}</text>`).join('')}
+    <circle class="pt" cx="${x(last.t)}" cy="${y(last.v)}" r="3.5"/>
+    <line class="hover-line" id="${key}HoverLine" y1="${Tp}" y2="${H - B}" visibility="hidden"/>
+    <circle class="hover-dot" id="${key}HoverDot" r="4" visibility="hidden"/>
+    <rect id="${key}Hit" x="${L}" y="${Tp}" width="${x(endT) - L}" height="${H - Tp - B}" fill="transparent"/>
+  </svg>`;
+  econState[key] = { ps, x, y, ref, i: ps.length - 1 };
+  const svg = host.querySelector('svg'), hit = $(`#${key}Hit`);
+  const fromPointer = (ev) => {
+    const box = svg.getBoundingClientRect();
+    const t = start + (((ev.clientX - box.left) * (W / box.width)) - L) / (W - L - R) * Math.max(DAY, endT - start);
+    let best = 0;
+    ps.forEach((q, i) => { if (Math.abs(q.t - t) < Math.abs(ps[best].t - t)) best = i; });
+    econHover(key, best);
+  };
+  hit.addEventListener('pointermove', fromPointer);
+  hit.addEventListener('pointerdown', fromPointer);
+  hit.addEventListener('pointerleave', () => econClear(key));
+  svg.addEventListener('keydown', (ev) => {
+    const st = econState[key], jump = ev.shiftKey ? 30 : 1;
+    const map = { ArrowLeft: st.i - jump, ArrowRight: st.i + jump, Home: 0, End: st.ps.length - 1, PageUp: st.i - 30, PageDown: st.i + 30 };
+    if (!(ev.key in map)) return;
+    ev.preventDefault();
+    econHover(key, map[ev.key]);
+    const r = st.ps[st.i];
+    $('#econLive').textContent = `${fmtDate(r.date)}: ${c.value(r.v)}`;
+  });
+  svg.addEventListener('blur', () => econClear(key));
+  econClear(key);
+  const s = M[key];
+  $(`#${key}Source`).innerHTML = `Source: <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.source)}${ext}</a>. Data to ${fmtDate(last.date)}; retrieved ${fmtDate(s.retrieved_at)}.` +
+    (key === 'brent' ? ' The price also moves with OPEC+ decisions and world demand.' : ' A weaker rial can come from sanctions, inflation or war risk.') +
+    (s.error ? ` <span class="tag tag-bad">Last update failed</span>` : '');
+}
+
+function inflChart() {
+  const host = $('#inflChart'), s = M && M.inflation;
+  if (!s || !s.rows.length) { host.innerHTML = '<p class="empty">Data is not available.</p>'; return; }
+  const ps = s.rows.filter(([yr]) => yr >= 2015);
+  const small = phone.matches;
+  const W = chartWidth(host, 760), H = small ? 200 : 210, L = 40, R = small ? 12 : 130, Tp = 22, B = 30;
+  const max = Math.ceil(Math.max(...ps.map(([, v]) => v)) / 10) * 10;
+  const slot = (W - L - R) / ps.length, bw = Math.min(36, slot * 0.6);
+  const y = (v) => Tp + (H - Tp - B) * (1 - Math.max(0, v) / max);
+  const grid = [];
+  for (let v = 0; v <= max; v += max > 40 ? 20 : 10) grid.push(`<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text class="axis-text" x="${L - 8}" y="${y(v) + 4}" text-anchor="end">${v}%</text>`);
+  host.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Iran consumer-price inflation by year: ${ps.map(([yr, v]) => `${yr} ${v}%`).join(', ')}.">
+    ${grid.join('')}
+    ${ps.map(([yr, v], i) => {
+      const cx = L + slot * (i + 0.5);
+      const showYear = !small || (ps.length - 1 - i) % 2 === 0;
+      return `<rect class="bar-econ" x="${cx - bw / 2}" y="${y(v)}" width="${bw}" height="${y(0) - y(v)}"/>` +
+        (small && i !== ps.length - 1 ? '' : `<text class="val" x="${cx}" y="${y(v) - 6}" text-anchor="middle">${Math.round(v)}</text>`) +
+        (showYear ? `<text class="axis-text" x="${cx}" y="${H - 8}" text-anchor="middle">${small ? `’${String(yr).slice(2)}` : yr}</text>` : '');
+    }).join('')}
+  </svg>`;
+  const lastYr = ps.at(-1)[0];
+  $('#inflSource').innerHTML = `Source: <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.source)}${ext}</a>. Annual values; latest year ${lastYr} (${ps.at(-1)[1]}%). ${lastYr + 1} and later are not yet published. Retrieved ${fmtDate(s.retrieved_at)}.` +
+    (s.error ? ` <span class="tag tag-bad">Last update failed</span>` : '');
+}
+
+function econTable() {
+  const b = econRows('brent'), r = econRows('rial');
+  if (!b && !r) { $('#econRaw').innerHTML = ''; return; }
+  const months = new Map();
+  const add = (data, k) => {
+    if (!data) return;
+    const start = econStart(data.rows);
+    for (const q of data.rows) {
+      if (q.t < start) continue;
+      const m = q.date.slice(0, 7), e = months.get(m) || {};
+      e[k] = e[k] || { n: 0, s: 0 };
+      e[k].n++; e[k].s += q.v;
+      months.set(m, e);
+    }
+  };
+  add(b, 'brent'); add(r, 'rial');
+  const cell = (e, k, f) => (e[k] ? f(e[k].s / e[k].n) : '—');
+  $('#econRaw').innerHTML = `<div class="table-scroll"><table><thead><tr><th scope="col">Month</th><th scope="col" class="num">Brent, $ per barrel</th><th scope="col" class="num">Rials per US dollar</th></tr></thead><tbody>${[...months].sort().reverse().map(([m, e]) => `<tr><td>${MONTHS[Number(m.slice(5)) - 1]} ${m.slice(0, 4)}</td><td class="num">${cell(e, 'brent', (v) => v.toFixed(2))}</td><td class="num">${cell(e, 'rial', (v) => fmtNum(Math.round(v)))}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+function economy() {
+  dailyChart('brent');
+  dailyChart('rial');
+  inflChart();
+  econTable();
 }
 
 /* ---------- Evidence ---------- */
@@ -573,15 +772,17 @@ try {
   const r = await fetch('data/monitor.json');
   if (!r.ok) throw Error('Data unavailable');
   D = await r.json();
-  const [cr, tr] = await Promise.all([fetch('data/collection.json').catch(() => null), fetch('data/transits.json').catch(() => null)]);
+  const [cr, tr, mr] = await Promise.all(['collection', 'transits', 'markets'].map((n) => fetch(`data/${n}.json`).catch(() => null)));
   C = cr && cr.ok ? await cr.json() : { sources: [], candidates: [] };
   T = tr && tr.ok ? prepTransits(await tr.json()) : null;
+  M = mr && mr.ok ? await mr.json() : null;
   $('#claimSelect').insertAdjacentHTML('beforeend', D.claims.map((c) => `<option value="${c.id}">${c.id} ${esc(c.title)}</option>`).join(''));
   $('#lastAssessment').textContent = fmtDate(D.assessments.map((a) => a.recorded_at || a.date).sort().at(-1));
   cards();
   ledger();
   transitChart();
   chart();
+  economy();
   scenario();
   historyTable();
   coverage();
@@ -626,6 +827,7 @@ try {
   $('#clearEvidence').onclick = () => { $('#search').value = ''; $('#claimSelect').value = ''; ledger(); $('#search').focus(); };
   $('#window').onchange = chart;
   $('#transitWindow').onchange = transitChart;
+  $('#econWindow').onchange = economy;
   $('#search').oninput = ledger;
   $('#claimSelect').onchange = ledger;
   $('#sort').onchange = ledger;
@@ -640,6 +842,7 @@ try {
     lastW = w;
     transitChart();
     chart();
+    economy();
   }).observe($('#chart'));
 
   // Content is rendered after load, so re-apply the URL fragment now that targets exist.

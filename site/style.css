@@ -206,6 +206,7 @@ tr.changed td { background: var(--hover); }
 .chart .line { fill: none; stroke: var(--series); stroke-width: 2.5; }
 .chart .pt { fill: var(--series); stroke: var(--bg); stroke-width: 2; }
 .chart .val { fill: var(--text); font-size: 13px; font-weight: 600; }
+.chart .bar-econ { fill: var(--series); opacity: 0.8; }
 details { margin-top: 10px; }
 summary { cursor: pointer; color: var(--link); width: fit-content; padding: 4px 0; min-height: 24px; }
 details[open] > summary { margin-bottom: 8px; }

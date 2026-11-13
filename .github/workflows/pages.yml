@@ -29,12 +29,13 @@ jobs:
         run: |
           python3 scripts/collect.py
           python3 scripts/transits.py
+          python3 scripts/markets.py
       - name: Preserve collection audit
         if: github.event_name != 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site/data/collection.json site/data/transits.json
+          git add site/data/collection.json site/data/transits.json site/data/markets.json
           if ! git diff --cached --quiet; then
             git commit -m 'Record scheduled source checks'
             git push
