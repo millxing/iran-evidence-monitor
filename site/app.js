@@ -26,6 +26,8 @@ const evidenceFor = (id) => D.evidence.filter((e) => e.claims.includes(id));
 const rationale = (a) => String(a.rationale || '').replace(SHARED_CAVEAT, '');
 const reviewerName = (r) => (/provisional initialization/i.test(r) ? 'AI draft (Codex), not reviewed' : r);
 const anyRevision = () => D.assessments.some((a) => !a.baseline);
+const ownerOnly = (who) => /not expert-reviewed/i.test(who || '');
+const reviewState = (a) => (!a.approved ? 'Not reviewed' : ownerOnly(a.reviewer) ? 'Owner sign-off; not expert-reviewed' : 'Approved');
 const isAiDraft = (a) => /provisional initialization/i.test(a.reviewer || '');
 // A record can carry a different direction for each claim; fall back to the record-level direction.
 const dirFor = (e, claim) => (e.directions && e.directions[claim]) || e.direction;
@@ -160,7 +162,7 @@ function detail(id, { push = true } = {}) {
   const a = current(c), b = baseline(c), ev = evidenceFor(id);
   const i = D.claims.indexOf(c), prev = D.claims[(i + D.claims.length - 1) % D.claims.length], next = D.claims[(i + 1) % D.claims.length];
   $('#detailMeta').innerHTML = `<button type="button" class="nav-btn" data-claim-nav="${prev.id}" aria-label="Previous claim, ${prev.id}">← ${prev.id}</button>
-    <span>${c.id} · test definition v${c.version} (draft)</span>
+    <span>${c.id} · test definition v${c.version} (${c.status !== 'approved' ? 'draft' : ownerOnly(c.approved_by) ? 'owner sign-off' : 'approved'})</span>
     <button type="button" class="nav-btn" data-claim-nav="${next.id}" aria-label="Next claim, ${next.id}">${next.id} →</button>`;
   $('#detailContent').innerHTML = `
     <h2 id="detailTitle">${esc(c.title)}</h2>
@@ -169,7 +171,7 @@ function detail(id, { push = true } = {}) {
       <div class="in"><span class="k">Current level</span><span class="v">${sign(a.level)} · ${label(a.level)}</span>${bar(a.level, b.level)}</div>
       <div><span class="k">Baseline, ${fmtDate(b.date)}</span><span class="v">${sign(b.level)}</span></div>
       <div><span class="k">Uncertainty</span><span class="v">${esc(a.uncertainty)}</span></div>
-      <div><span class="k">Review</span><span class="v">${a.approved ? 'Approved' : 'Not reviewed'}</span></div>
+      <div><span class="k">Review</span><span class="v">${reviewState(a)}</span></div>
     </div>
     <h3>Rationale</h3><p>${esc(rationale(a))}</p>
     <h3>Evidence (${ev.length})</h3>

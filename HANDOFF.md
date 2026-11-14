@@ -79,7 +79,7 @@ All recorded in the `audit` list in `monitor.json`, actor "Claude (at owner requ
 - Ship transit counts, Brent, the rial rate and inflation are display-only context; they never change a level. Using them as evidence needs the user's decision and new test definitions.
 - Preserve prior assessments and corrections; append, never overwrite.
 
-Current provisional levels, for regression checking: H1 = 0; H2 = +2; H3 = 0; H4 = −1; H5 = 0; H6 = −2.
+Current provisional levels, for regression checking: H1 = 0; H2 = +2; H3 = −1 (revised 13 Nov from 0); H4 = −1; H5 = +1 (revised 13 Nov from 0); H6 = −2. The H3 and H5 revisions and test approvals are owner sign-off of AI proposals, applied with `scripts/review.py`; baselines are unchanged.
 
 ## Verification
 

@@ -46,9 +46,11 @@
       "version": 1,
       "baseline": "2026-11-12",
       "horizon": "2027-11-13",
-      "status": "draft",
+      "status": "approved",
       "owner": "millxing",
-      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape."
+      "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape.",
+      "approved_by": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "approved_at": "2026-11-14T01:31:16.910929+00:00"
     },
     {
       "id": "H4",
@@ -78,10 +80,12 @@
       "version": 1,
       "baseline": "2026-11-12",
       "horizon": "2028-11-13",
-      "status": "draft",
+      "status": "approved",
       "owner": "millxing",
       "attribution": "Report-derived hypothesis; not a verified direct quotation from Pape.",
-      "plain": "Attacks give Iran a stronger long-term reason to rebuild its nuclear program."
+      "plain": "Attacks give Iran a stronger long-term reason to rebuild its nuclear program.",
+      "approved_by": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "approved_at": "2026-11-14T01:31:16.893477+00:00"
     },
     {
       "id": "H6",
@@ -189,6 +193,43 @@
         "E005"
       ],
       "rationale": "Limited challenge: renewed EU sanctions and the IMF adverse growth assessment show diplomatic and economic costs. Military regeneration and durable influence are not measured, so a stronger judgment is not warranted. Retrospective, provisional analyst judgment using publications dated before the cutoff; no archived as-of snapshot or human approval."
+    },
+    {
+      "claim": "H5",
+      "level": 1,
+      "uncertainty": "High; no IAEA access to the stockpile or enrichment sites since June 2025",
+      "evidence": [
+        "E002",
+        "E006",
+        "E007",
+        "E008",
+        "E009"
+      ],
+      "rationale": "Slight support. Two documented signs of policy hardening that Iran links to the attacks: ending the Cairo agreement and making cooperation conditional on the end of threats (E006), and refusing verification beyond its safeguards agreement even after the war (E009). Against this, Iran agreed in June 2026 to down-blend its stockpile under IAEA supervision, though the agreement collapsed (E008). No rebuilding is verified (E002, E007), so the test is not met and a higher level is not warranted.",
+      "reviewer": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "date": "2026-11-13",
+      "approved": true,
+      "version": 1,
+      "recorded_at": "2026-11-14T01:31:16.928315+00:00",
+      "baseline": false,
+      "previous": 0
+    },
+    {
+      "claim": "H3",
+      "level": -1,
+      "uncertainty": "High; no official text of the June 2026 memorandum; incomplete evidence search",
+      "evidence": [
+        "E003",
+        "E010"
+      ],
+      "rationale": "Slight challenge. The one agreement that traded Hormuz passage for US commitments (E010) was declared over within three weeks and expired on 17 August 2026, which matches the falsifier of a concession reversed within 180 days. Renewed EU sanctions (E003) are a further cost. The memorandum ended a wider war, so the attribution to maritime pressure is weak.",
+      "reviewer": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "date": "2026-11-13",
+      "approved": true,
+      "version": 1,
+      "recorded_at": "2026-11-14T01:31:16.944591+00:00",
+      "baseline": false,
+      "previous": 0
     }
   ],
   "evidence": [
@@ -576,6 +617,38 @@
       "actor": "Claude (at owner request)",
       "action": "Added E009 (INFCIRC/1416, Iran\u2019s reply to GOV/2026/50; H5) and E010 (June 2026 US\u2013Iran memorandum; H3). Directions are proposals pending review. No level changed.",
       "approved": false
+    },
+    {
+      "date": "2026-11-14T01:31:16.893477+00:00",
+      "actor": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "action": "approve-test",
+      "claim": "H5",
+      "rationale": "Owner accepted the AI-drafted test definition v1 without change so that a dated revision can be recorded.",
+      "approved": true
+    },
+    {
+      "date": "2026-11-14T01:31:16.910929+00:00",
+      "actor": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "action": "approve-test",
+      "claim": "H3",
+      "rationale": "Owner accepted the AI-drafted test definition v1 without change so that a dated revision can be recorded.",
+      "approved": true
+    },
+    {
+      "date": "2026-11-14T01:31:16.928315+00:00",
+      "actor": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "action": "assess",
+      "claim": "H5",
+      "rationale": "Slight support. Two documented signs of policy hardening that Iran links to the attacks: ending the Cairo agreement and making cooperation conditional on the end of threats (E006), and refusing verification beyond its safeguards agreement even after the war (E009). Against this, Iran agreed in June 2026 to down-blend its stockpile under IAEA supervision, though the agreement collapsed (E008). No rebuilding is verified (E002, E007), so the test is not met and a higher level is not warranted.",
+      "approved": true
+    },
+    {
+      "date": "2026-11-14T01:31:16.944591+00:00",
+      "actor": "Owner sign-off of AI proposal (Claude); not expert-reviewed",
+      "action": "assess",
+      "claim": "H3",
+      "rationale": "Slight challenge. The one agreement that traded Hormuz passage for US commitments (E010) was declared over within three weeks and expired on 17 August 2026, which matches the falsifier of a concession reversed within 180 days. Renewed EU sanctions (E003) are a further cost. The memorandum ended a wider war, so the attribution to maritime pressure is weak.",
+      "approved": true
     }
   ],
   "gaps": [
