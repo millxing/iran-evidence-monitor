@@ -19,6 +19,8 @@ The original brief is `Robert_Pape_Iran_Geopolitical_Analysis_and_Monitoring_Pla
 
 Use direct, simple language (the user prefers ASD-STE100 style). Distinguish verified facts from assumptions. Challenge weak assumptions. Ask before large installations and give a size estimate. Correctness, maintainability, and completeness take priority over token savings. Essential text only: no promotional slogans or "AI-looking" design. Ask before changing research data.
 
+Nov 13: the owner said the project needs "lots of deference" to the agent's judgment; they lack time and domain expertise. Make evidence and research calls yourself and report them briefly. Still ask before changing levels, formal statements or test definitions. Record owner approvals as "Owner sign-off … not expert-reviewed" (see E006–E008 and the audit list). Never relabel levels or tests as human- or expert-reviewed.
+
 ## Architecture and files
 
 No framework, build step, backend, or package install. The browser loads JSON with relative URLs, so the page must be served over HTTP (`cd site && python3 -m http.server`). Opened as `file://`, the page shows a message that explains this, not a blank page.
@@ -121,7 +123,7 @@ Suggested by evaluators, not done:
 8. IMF WEO inflation projections for 2026 would be more current than World Bank annual data, but the IMF DataMapper API refused automated requests in testing.
 9. Commit a reusable browser test suite (Playwright) to replace the scratchpad scripts.
 
-Operations and research limits (unchanged): collection detects page-byte changes only; only eight curated evidence records (E006–E008 are 2026 IAEA reports added Nov 13; owner-supplied PDFs kept locally in `IAEA/`, ignored by Git, hashes match iaea.org); insurance, treaty and military feeds are not connected; no forecast model. Review application requires repository write access and `scripts/review.py` (do not run with `python -O`).
+Operations and research limits (unchanged): collection detects page-byte changes only; only ten curated evidence records (E006–E008 are 2026 IAEA reports, owner sign-off; E009 Iran’s INFCIRC/1416 reply; E010 the June 2026 US–Iran memorandum for H3; owner-supplied PDFs kept locally in `IAEA/`, ignored by Git, hashes match iaea.org); insurance, treaty and military feeds are not connected; no forecast model. Review application requires repository write access and `scripts/review.py` (do not run with `python -O`).
 
 ## Next steps
 

@@ -336,7 +336,7 @@
       "type": "Direct institutional report",
       "cluster": "iran-inspections-2025",
       "reliability": "Primary institutional report (IAEA Director General to the Board); official derestricted copy",
-      "status": "Pending review",
+      "status": "Owner sign-off, 13 Nov 2026; not expert-reviewed",
       "license": "Short excerpt with attribution; original document linked.",
       "correction_of": null,
       "retrieved_at": "2026-11-13T23:30:00+00:00",
@@ -364,7 +364,7 @@
       "type": "Direct institutional report",
       "cluster": "iran-inspections-2025",
       "reliability": "Primary institutional report (IAEA Director General to the Board); official derestricted copy",
-      "status": "Pending review",
+      "status": "Owner sign-off, 13 Nov 2026; not expert-reviewed",
       "license": "Short excerpt with attribution; original document linked.",
       "correction_of": null,
       "retrieved_at": "2026-11-13T23:30:00+00:00",
@@ -397,7 +397,7 @@
       "type": "Direct institutional report",
       "cluster": "iran-inspections-2025",
       "reliability": "Primary institutional report (IAEA Director General to the Board); official derestricted copy",
-      "status": "Pending review",
+      "status": "Owner sign-off, 13 Nov 2026; not expert-reviewed",
       "license": "Short excerpt with attribution; original document linked.",
       "correction_of": null,
       "retrieved_at": "2026-11-13T23:30:00+00:00",
@@ -418,6 +418,61 @@
       "missingness": "Memorandum text is from press reports, not an official release. No in-field verification at any declared facility in the period. Iran disputes the report (INFCIRC/1416, not recorded).",
       "effect": "Iranian commitments on the enriched-uranium stockpile; verification access",
       "hash": "325127e81d4fb61053c6fbf1126fe9a3a507cb5e4bc57f7dfeb94afa4c9c3a48"
+    },
+    {
+      "id": "E009",
+      "claims": [
+        "H5"
+      ],
+      "title": "Iran rules out verification beyond its safeguards agreement, now or after the war",
+      "publisher": "Permanent Mission of Iran to the IAEA (circulated by the IAEA)",
+      "url": "https://www.iaea.org/sites/default/files/2026-09/infcirc1416.pdf",
+      "document": "INFCIRC/1416 (8 Sep 2026), attachment paragraphs 13, 15, 22, 29",
+      "published": "2026-09-08",
+      "observed": "2026-09-07",
+      "collected": "2026-11-13",
+      "type": "Official government statement",
+      "direction": "Potential support",
+      "cluster": "iran-official-statements-2026",
+      "reliability": "Primary statement of Iran\u2019s official position; self-interested source",
+      "excerpt": "\u201cany verification activities related to the issues beyond Iran\u2019s safeguards commitments have no legal base, and therefore would not be allowed either now or after the termination of war condition.\u201d",
+      "rationale": "Iran\u2019s own formal statement that it will refuse verification beyond its basic safeguards agreement even after the war, and that loss of continuity of knowledge is \u201ca natural aftermath of the war\u201d. This is documented policy hardening that Iran links to the attacks, from a source independent of the IAEA reports. It is not evidence of rebuilding, and Iran also says access to safeguarded facilities will return when threats end (paragraph 29).",
+      "confounders": "Negotiating position ahead of a possible deal; legal dispute over the reimposed Security Council resolutions.",
+      "missingness": "States intentions only; no information on facilities or material.",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original document linked.",
+      "effect": "Iran\u2019s stated policy on IAEA verification",
+      "correction_of": null,
+      "hash": "488a332c1b5dbfa2820304f6fb60178cbcf3177189afec1d0c7605d26f04b26a",
+      "retrieved_at": "2026-11-13T23:55:00+00:00"
+    },
+    {
+      "id": "E010",
+      "claims": [
+        "H3"
+      ],
+      "title": "US\u2013Iran memorandum trades Hormuz passage for US commitments; it collapses within weeks",
+      "publisher": "Al Jazeera (text read out by a US official)",
+      "url": "https://www.aljazeera.com/news/2026/6/18/what-the-trump-iran-14-point-plan-says-about-lebanon-hormuz-and-uranium",
+      "document": "Explainer, 18 Jun 2026, quoting the 17 Jun 2026 memorandum; collapse dates from GOV/2026/50 paragraph 19 (E008)",
+      "published": "2026-06-18",
+      "observed": "2026-08-17",
+      "collected": "2026-11-13",
+      "type": "Secondary report of an agreement",
+      "direction": "Potential challenge",
+      "cluster": "us-iran-mou-2026",
+      "reliability": "Major news outlet quoting a US official read-out; no official text published; Iran did not confirm the US version",
+      "excerpt": "Iran will make \u201cbest efforts for the safe passage of commercial vessels with no charge for 60 days only\u201d; the US \u201cundertakes to terminate all types of sanctions against Iran in an agreed-upon schedule as part of the final deal\u201d and to end its naval blockade within 30 days.",
+      "rationale": "The closest case yet of concessions linked to maritime leverage: US commitments on the blockade, sanctions and a reconstruction plan in exchange for, among other things, Hormuz passage. But the concessions were promises tied to a final deal that never came; the US President called the memorandum \u201cover\u201d on 8 July 2026 and it expired on 17 August 2026. A concession reversed within 180 days matches the H3 falsifier, so this is a potential challenge to the durable-concession claim, not support.",
+      "confounders": "The memorandum ended a wider war, so its terms cannot be attributed to maritime pressure alone; the reasons for the collapse are disputed by both sides.",
+      "missingness": "No official text; the full 14 points were not published; whether the blockade removal began is not confirmed.",
+      "status": "Pending review",
+      "license": "Short excerpt with attribution; original article linked.",
+      "effect": "Terms and duration of a US\u2013Iran agreement involving Hormuz passage",
+      "correction_of": null,
+      "hash": "b3b06b2df8c159179c5e85afb4adc0f4225297fc705510e72c4accf9b97c82f3",
+      "retrieved_at": "2026-11-13T23:55:00+00:00",
+      "retrieval_note": "Page bytes hashed on retrieval; news pages change, so the hash records this copy only."
     }
   ],
   "series": {
@@ -508,6 +563,18 @@
       "date": "2026-11-13",
       "actor": "Claude (at owner request)",
       "action": "Added evidence records E006\u2013E008 from IAEA reports GOV/2026/8, GOV/2026/33 (with Corr.1) and GOV/2026/50, supplied by the owner and matched by hash to iaea.org. Directions are proposals pending review. No level changed.",
+      "approved": false
+    },
+    {
+      "date": "2026-11-13",
+      "actor": "Owner (sign-off of AI proposals)",
+      "action": "Approved the proposed directions for E006\u2013E008. The owner signed off on AI proposals; this is not expert review. No level changed.",
+      "approved": true
+    },
+    {
+      "date": "2026-11-13",
+      "actor": "Claude (at owner request)",
+      "action": "Added E009 (INFCIRC/1416, Iran\u2019s reply to GOV/2026/50; H5) and E010 (June 2026 US\u2013Iran memorandum; H3). Directions are proposals pending review. No level changed.",
       "approved": false
     }
   ],
