@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-11-16T21:06:05.161676+00:00",
+  "checked_at": "2026-11-17T19:55:01.153585+00:00",
   "sources": [
     {
       "name": "EIA energy security",
       "url": "https://www.eia.gov/outlooks/steo/report/energysecurity/article.php",
-      "checked_at": "2026-11-16T21:06:05.161676+00:00",
+      "checked_at": "2026-11-17T19:55:01.153585+00:00",
       "status": "Retrieved; not reviewed",
       "hash": "af7cf7dbdae1280a2fa52265c325741b0e4bc43feb4a199156169d9551c84394",
-      "last_success": "2026-11-16T21:06:05.161676+00:00"
+      "last_success": "2026-11-17T19:55:01.153585+00:00"
     },
     {
       "name": "IAEA Iran updates",
       "url": "https://www.iaea.org/newscenter/focus/iran",
-      "checked_at": "2026-11-16T21:06:05.161676+00:00",
+      "checked_at": "2026-11-17T19:55:01.153585+00:00",
       "status": "Collection failed",
       "error": "HTTP Error 403: Forbidden",
       "hash": null,
@@ -21,7 +21,7 @@
     {
       "name": "IAEA Board reports on Iran",
       "url": "https://www.iaea.org/newscenter/focus/iran/iaea-and-iran-iaea-board-reports",
-      "checked_at": "2026-11-16T21:06:05.161676+00:00",
+      "checked_at": "2026-11-17T19:55:01.153585+00:00",
       "status": "Collection failed",
       "error": "HTTP Error 403: Forbidden",
       "hash": null,
@@ -30,10 +30,10 @@
     {
       "name": "UKMTO notices",
       "url": "https://www.ukmto.org/",
-      "checked_at": "2026-11-16T21:06:05.161676+00:00",
+      "checked_at": "2026-11-17T19:55:01.153585+00:00",
       "status": "Retrieved; not reviewed",
-      "hash": "52436738fcfba274d7481ed2a40adbda90bc5ea382577691deeface4c0b09068",
-      "last_success": "2026-11-16T21:06:05.161676+00:00"
+      "hash": "5a42fe4ae6ef6e24df1a357d078e90b9ea2ae7b23dd910f830c2f757bacae615",
+      "last_success": "2026-11-17T19:55:01.153585+00:00"
     }
   ],
   "candidates": [
@@ -90,6 +90,14 @@
       "url": "https://www.ukmto.org/",
       "hash": "52436738fcfba274d7481ed2a40adbda90bc5ea382577691deeface4c0b09068",
       "detected_at": "2026-11-16T21:06:05.161676+00:00",
+      "status": "pending",
+      "note": "Page bytes changed or first retrieval. May be navigation or layout only."
+    },
+    {
+      "name": "UKMTO notices",
+      "url": "https://www.ukmto.org/",
+      "hash": "5a42fe4ae6ef6e24df1a357d078e90b9ea2ae7b23dd910f830c2f757bacae615",
+      "detected_at": "2026-11-17T19:55:01.153585+00:00",
       "status": "pending",
       "note": "Page bytes changed or first retrieval. May be navigation or layout only."
     }
