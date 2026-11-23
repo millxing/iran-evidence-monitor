@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-11-22T18:34:36.033089+00:00",
+  "checked_at": "2026-11-23T22:43:43.355219+00:00",
   "sources": [
     {
       "name": "EIA energy security",
       "url": "https://www.eia.gov/outlooks/steo/report/energysecurity/article.php",
-      "checked_at": "2026-11-22T18:34:36.033089+00:00",
+      "checked_at": "2026-11-23T22:43:43.355219+00:00",
       "status": "Retrieved; not reviewed",
-      "hash": "e49f1eff5eae59179acc2e8077e4abcf57e5231687d6ec2eca66d41651c1c59a",
-      "last_success": "2026-11-22T18:34:36.033089+00:00"
+      "hash": "f1eb758eed545013d71e0c0fda9263a8338b5032fcdb3cd45040751eeabc3169",
+      "last_success": "2026-11-23T22:43:43.355219+00:00"
     },
     {
       "name": "IAEA Iran updates",
       "url": "https://www.iaea.org/newscenter/focus/iran",
-      "checked_at": "2026-11-22T18:34:36.033089+00:00",
+      "checked_at": "2026-11-23T22:43:43.355219+00:00",
       "status": "Collection failed",
       "error": "HTTP Error 403: Forbidden",
       "hash": null,
@@ -21,7 +21,7 @@
     {
       "name": "IAEA Board reports on Iran",
       "url": "https://www.iaea.org/newscenter/focus/iran/iaea-and-iran-iaea-board-reports",
-      "checked_at": "2026-11-22T18:34:36.033089+00:00",
+      "checked_at": "2026-11-23T22:43:43.355219+00:00",
       "status": "Collection failed",
       "error": "HTTP Error 403: Forbidden",
       "hash": null,
@@ -30,10 +30,10 @@
     {
       "name": "UKMTO notices",
       "url": "https://www.ukmto.org/",
-      "checked_at": "2026-11-22T18:34:36.033089+00:00",
+      "checked_at": "2026-11-23T22:43:43.355219+00:00",
       "status": "Retrieved; not reviewed",
-      "hash": "9bdf188e9e848e338880420dde0e460e82b763676642d954b214a3e3ec98b079",
-      "last_success": "2026-11-22T18:34:36.033089+00:00"
+      "hash": "19429a3e50fee4bf15fc7cc7b7ae89e39533d934974693d60b2154c31f0387e0",
+      "last_success": "2026-11-23T22:43:43.355219+00:00"
     }
   ],
   "candidates": [
@@ -154,6 +154,22 @@
       "url": "https://www.ukmto.org/",
       "hash": "9bdf188e9e848e338880420dde0e460e82b763676642d954b214a3e3ec98b079",
       "detected_at": "2026-11-22T18:34:36.033089+00:00",
+      "status": "pending",
+      "note": "Page bytes changed or first retrieval. May be navigation or layout only."
+    },
+    {
+      "name": "EIA energy security",
+      "url": "https://www.eia.gov/outlooks/steo/report/energysecurity/article.php",
+      "hash": "f1eb758eed545013d71e0c0fda9263a8338b5032fcdb3cd45040751eeabc3169",
+      "detected_at": "2026-11-23T22:43:43.355219+00:00",
+      "status": "pending",
+      "note": "Page bytes changed or first retrieval. May be navigation or layout only."
+    },
+    {
+      "name": "UKMTO notices",
+      "url": "https://www.ukmto.org/",
+      "hash": "19429a3e50fee4bf15fc7cc7b7ae89e39533d934974693d60b2154c31f0387e0",
+      "detected_at": "2026-11-23T22:43:43.355219+00:00",
       "status": "pending",
       "note": "Page bytes changed or first retrieval. May be navigation or layout only."
     }
